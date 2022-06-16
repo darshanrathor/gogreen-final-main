@@ -55,7 +55,7 @@ const Index = () => {
   return (
     <>
       <div id="main" className=" bg-cover bg-no-repeat ">
-      <section className="text-center text-white bg-black bg-opacity-90 bg-cover backdrop-blur-sm  flex-row  lg:flex sm:items-center gap-x-24 sm:justify-center     ">
+      <section className="text-center text-white bg-black bg-opacity-90 bg-cover backdrop-blur-sm  flex-row  lg:flex sm:items-center gap-x-15 sm:justify-center     ">
 
       
 <div className=' ' >
