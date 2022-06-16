@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-zinc-800;
+  }
+
+  p {
+    @apply text-gray-700;
+  }
+  .labelt {
+    @apply origin-[0]  absolute left-3 top-[15px]  text-sm transition-all cursor-text	text-zinc-700 duration-150 ease-in;
+  }
+
+  .st:focus-within ~ label,
+  .st:not(:placeholder-shown) ~ label {
+    @apply transform scale-[0.85] duration-150 ease-in -translate-y-[6px] top-2;
+  }
+
+  .st:focus-within ~ label {
+    @apply text-zinc-800;
+  }
+}
