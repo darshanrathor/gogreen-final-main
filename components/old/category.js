@@ -63,7 +63,7 @@ function CategoryItem({ data }) {
 		<>
 			<div className="flex flex-col gap-5 text-zinc-800  bg-[#E6FCE0] px-8  py-10 w-full rounded-md mx-auto">
 				<Link href={`/${data.url}`}>
-					<a className="w-full flex  select-none justify-center h-[350px]">
+					<a className="w-full flex  select-none justify-center h-[330px]">
 						<img src={data.image} className="w-full md:w-[250px] rounded-md"></img>
 					</a>
 				</Link>

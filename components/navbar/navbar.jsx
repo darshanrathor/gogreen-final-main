@@ -69,7 +69,7 @@ const logout = (name) => {
 <Navlink text="paper ganesha" link="/paper-ganesha"/>
 <Navlink text="plant ganesha" link="/plant-ganesha"/>
         </div>
-        <div className="flex gap-5  items-center">
+        <div className="flex gap-2  items-center">
           <div className="flex gap-1  text-white items-center">
 {user!== null ? 
 <div>
