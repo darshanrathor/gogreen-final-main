@@ -15,7 +15,7 @@ const FamilyComponent = dynamic(() => import("../components/review/review"), { s
 export default function Index() {
   return (
     <div>
-      {/* <Banner /> */}
+      <Banner />
       <Category />
       <Sectionthird />
       <Countdown />
