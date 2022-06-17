@@ -6,7 +6,7 @@ export default function Footer() {
 			<div className=" w-11/12 mx-auto pt-14 md:pt-20 pb-12 flex items-center text-gray-100 ">
 				<div className="grid grid-col-1 gap-x-7 gap-y-7 items-start w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
 					<div>
-						<Image src="/imgs/white.png" width={180} height={70} />
+						<Image src="/imgs/white.png" width={160} height={80} />
 						<div className=" flex flex-col mt-3 gap-y-1 ">
 							<h2 className="md:text-xl mb-1 uppercase text-white font-semibold">Go Green Ganesha</h2>
 							<p className=" capitalize text-zinc-300 ">
