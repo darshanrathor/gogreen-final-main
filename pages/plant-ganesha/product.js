@@ -96,7 +96,7 @@ export default function PlantGaneshaSlug() {
           <Popupcart
             qty={qty.qty}
             transition={`${popup
-              ? "-translate-x-[100px] opacity-100 visible"
+              ? "-translate-x-[10px] md:-translate-x-[100px] opacity-100 visible"
               : "translate-x-[0px] opacity-0 invisible"
               }`}
             data={product}
@@ -251,7 +251,7 @@ export default function PlantGaneshaSlug() {
                           <a
                             target="_blank"
                             rel="noreferrer"
-                            href={`https://api.whatsapp.com/send?phone=919137606816?text=I%20want%20to%20book%20this%20ganesha%20Eco%20friendly%20${product?.name}%20-${product?.inch}"Inch%20Thank%20you!`}
+                            href={`https://api.whatsapp.com/send?phone=919137606816`}
                             className="text-base md:mx-12 rounded-full hover:scale-[1.05] transform transition duration-200 ease-in bg-green-600 uppercase text-white font-semibold hover:bg-green-700 flex gap-3 justify-center items-center  px-4 py-3 max-w-sm w-full"
                           >
                             <span>
