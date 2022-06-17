@@ -52,7 +52,10 @@ export default function Family() {
 							<Image src="/imgs/2.jpeg" alt="family" objectFit="fill" layout="fill" />
 						</div>
 						<div className="h-[300px] w-full">
-							<Image src="/imgs/3.jpeg" alt="family" objectFit="fill" layout="fill" />
+							<Image src="/imgs/test1.jpeg" alt="family" objectFit="fill" layout="fill" />
+						</div>
+						<div className="h-[300px] w-full">
+							<Image src="/imgs/test2.jpeg" alt="family" objectFit="fill" layout="fill" />
 						</div>
 						<div className="h-[300px] w-full">
 							<Image src="/imgs/4.jpeg" alt="family" objectFit="fill" layout="fill" />
@@ -62,6 +65,9 @@ export default function Family() {
 						</div>
 						<div className="h-[300px] w-full">
 							<Image src="/imgs/6.jpeg" alt="family" objectFit="fill" layout="fill" />
+						</div>
+						<div className="h-[300px] w-full">
+							<Image src="/imgs/test.jpeg" alt="family" objectFit="fill" layout="fill" />
 						</div>
 					</Carousel>
 				</div>

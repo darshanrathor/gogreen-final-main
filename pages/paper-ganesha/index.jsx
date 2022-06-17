@@ -40,10 +40,12 @@ const fetchAstrologer = async () => {
               Eco Paper-ganeshas Idols
             </Heading>
             <Paragraph extra="max-w-2xl mx-auto">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s,{" "}
+            Paper mache Ganpati's are made from the term that they explain being Paper . 
+            Paper is used to making such idols. 
+            these idols are light in weight and comparatively cheaper.{" "}
             </Paragraph>
+
+      
           </div>
         </div>
       </div>

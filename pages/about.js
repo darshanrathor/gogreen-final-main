@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -64,10 +65,13 @@ export default function About() {
                       </div>
 
                       
+                      
                       <div className=' flex flex-col lg:flex-col px-[150px] lg:px-[130px] bg-zinc-100  '>
-                      <button className='bg-[#184029] max-w-[120px] text-center items-center justify-center  text-display tracking-wide font-semibold text-lightgray py-2 rounded-full px-2 mb-2 hover:bg-hovergreen'>
+                      
+                      <button link="/clay-ganesha" className='bg-[#184029] max-w-[120px] text-center items-center justify-center  text-display tracking-wide font-semibold text-lightgray py-2 rounded-full px-2 mb-2 hover:bg-hovergreen'>
                         Book Now
                       </button>
+                    
                       </div>
       
   

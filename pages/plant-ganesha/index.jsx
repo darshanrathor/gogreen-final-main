@@ -41,9 +41,9 @@ const fetchAstrologer = async () => {
               Eco clay-ganeshas Idols
             </Heading>
             <Paragraph extra="max-w-2xl mx-auto">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s,{" "}
+               Ganesha idol is Made of natural clay, organic fertilizer, 
+            no artificial color, with plant seeds, 
+            this unique concept is designed to grow into a plant after immersion.,{" "}
             </Paragraph>
           </div>
         </div>

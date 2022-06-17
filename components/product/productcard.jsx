@@ -47,8 +47,8 @@ export function Product(props) {
               layout="responsive"
               objectFit="cover"
               objectPosition="center"
-              height={100}
-              width={100}
+              height={180}
+              width={180}
                className="rounded"
               //   placeholder="blur"
               loading="lazy"

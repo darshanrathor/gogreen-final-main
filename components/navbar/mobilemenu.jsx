@@ -19,7 +19,7 @@ export default function Mobilemenu ({transition,passclose}){
     <div className="flex divide-y px-5 divide-green-900 flex-col">
 <Navlink  text="Clay ganesha" link="/clay-ganesha"/>
 <Navlink text="Paper ganesha" link="/paper-ganesha"/>
-<Navlink text="Plant ganesha" link="/plan-ganesha"/>
+<Navlink text="Plant ganesha" link="/plant-ganesha"/>
 <Navlink text="Cart" link="/cart"/>
 <Navlink text="Contact us" link="/contact"/>
 <Navlink text="Login / signup" link="/login"/>
