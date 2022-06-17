@@ -54,8 +54,8 @@ const Index = () => {
 
   return (
     <>
-      <div id="main" className=" bg-cover bg-no-repeat ">
-      <section className="text-center text-white bg-black bg-opacity-90 bg-cover backdrop-blur-sm  flex-row  lg:flex sm:items-center gap-x-15 sm:justify-center     ">
+      <div  className=" bg-cover bg-no-repeat ">
+      <section className="text-center text-white bg-black bg-opacity-90 bg-cover backdrop-blur-sm  flex-row  lg:flex sm:items-center gap-x-10 sm:justify-center     ">
 
       
 <div className=' ' >
@@ -72,7 +72,7 @@ className="sm:w-full "
         
   
         <div   className=" center w-full  ">
-          <div id="glass" className=" text-center flex flex-col items-center justify-center    " >
+          <div  className=" text-center flex flex-col items-center justify-center    " >
 
 
             <h2 className=" font-bold text-2xl px-5 font-body  text-zinc-300 text-center"> सर्वांना गणेशचतुर्थीच्या हार्दीक शुभेच्छा </h2>

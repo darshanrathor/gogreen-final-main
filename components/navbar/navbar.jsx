@@ -110,7 +110,7 @@ const logout = (name) => {
 </>
 }
 </div>
-        <button className="text-white flex gap-1 items-center px-6  hover:text-zinc-300" onClick={() => router.push("/cart")}>
+        <button className="text-white flex gap-1 items-center px-6 mr-5 hover:text-zinc-300" onClick={() => router.push("/cart")}>
         <svg
               className="w-6  stroke-current h-6"
               viewBox="0 0 18 18"
