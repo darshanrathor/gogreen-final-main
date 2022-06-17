@@ -17,7 +17,7 @@ export default function Signup() {
   const [inputvalue, setvalue] = useState(initialValue);
   const [error, seterror] = useState("");
   const router = useRouter();
-  
+
   if (error) {
     setTimeout(() => seterror(""), 2000);
   }
@@ -37,7 +37,7 @@ export default function Signup() {
       inputvalue.password.length >= 6
     ) {
       validate();
-      router.push("/");
+      window.location.href = "/";
     } else {
       seterror("All details must be filled");
     }
@@ -46,7 +46,7 @@ export default function Signup() {
   const validate = async () => {
     const d = await storedetail();
     if (d?.err === null || undefined) {
-      storeUser("user",{name:d.data[0].name,email:d.data[0].email});
+      storeUser("user", { name: d.data[0].name, email: d.data[0].email });
     } else {
       seterror(d?.err?.details.split("=")[1]);
     }
@@ -233,7 +233,7 @@ l6 -41 -213 0 -213 0 6 42 c7 55 52 116 107 146 61 32 159 29 214 -8z"
               Sign Up
             </button>
           </div>
-          
+
         </form>
         <p className="text-zinc-800 text-lg">
           Already have an account ?{" "}

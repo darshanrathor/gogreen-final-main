@@ -29,35 +29,35 @@ export default function Checkout(props) {
 
   const [formErrors, setFormErrors] = useState(initialvalue);
   const [error, seterror] = useState("");
-  const {cartItem} = useCart();
+  const { cartItem } = useCart();
   const [item, setitem] = useState([]);
-const [user,setuser] = useState(null);
-const router = useRouter();
+  const [user, setuser] = useState(null);
+  const router = useRouter();
 
 
 
   useEffect(() => {
     // console.log(await Toalvalue());
-    if(cartItem){
+    if (cartItem) {
       setitem(cartItem);
       setloader(false);
     }
-    else{
+    else {
       router.push("/");
     }
-  
-}, [cartItem]);
+
+  }, [cartItem]);
 
 
-const data = getLocalstorage("user");
+  const data = getLocalstorage("user");
 
-useEffect(() => {
-if(data){
-  setuser(data);
-  setinputvalue(prev=> ({...prev,email:user?.email}));
-}
+  useEffect(() => {
+    if (data) {
+      setuser(data);
+      setinputvalue(prev => ({ ...prev, email: user?.email }));
+    }
 
-}, []);
+  }, []);
 
 
 
@@ -70,7 +70,7 @@ if(data){
     if (values.user_mobile_number.toString().length < 10) {
       error.user_mobile_number = "*required";
     }
-  
+
     if (values.user_address_line_1.trim() == "") {
       error.user_address_line_1 = "*required";
     }
@@ -86,7 +86,7 @@ if(data){
     if (values.firstname.trim() == "") {
       error.firstname = "*required";
     }
-  
+
     if (values.user_zipcode.trim() == "") {
       error.user_zipcode = "*required";
     }
@@ -94,7 +94,7 @@ if(data){
   };
 
 
-  const submitingform = async(e) => {
+  const submitingform = async (e) => {
     e.preventDefault();
     if (Object.keys(validate(inputvalue)).length !== 0) {
       setFormErrors(validate(inputvalue));
@@ -103,34 +103,34 @@ if(data){
     if (Object.keys(validate(inputvalue)).length === 0) {
       setloader2(true);
       await updatedatabase();
-      await displayRazorpay(inputvalue.email,inputvalue.firstname + " " + inputvalue.lastname,inputvalue.user_mobile_number,Toalvalue().totalvalue,item);
+      await displayRazorpay(inputvalue.email, inputvalue.firstname + " " + inputvalue.lastname, inputvalue.user_mobile_number, Toalvalue().totalvalue, item);
     } else {
       setFormErrors(validate(inputvalue));
     }
   };
 
 
-const updatedatabase =async() =>{
-  const { data, error } = await supabase.from("orderHistory").insert([
-    {
-      name: inputvalue.firstname + " " + inputvalue.lastname,
-      email: inputvalue.email,
-      shipping: JSON.stringify(inputvalue),
-      order:JSON.stringify(item)
-    },
-  ]);
-  if(!error){
-    setloader2(false);
+  const updatedatabase = async () => {
+    const { data, error } = await supabase.from("orderHistory").insert([
+      {
+        name: inputvalue.firstname + " " + inputvalue.lastname,
+        email: inputvalue.email,
+        shipping: JSON.stringify(inputvalue),
+        order: JSON.stringify(item)
+      },
+    ]);
+    if (!error) {
+      setloader2(false);
+    }
+
   }
 
-}
-
-if(loader2){
-  setTimeout(()=> setloader2(false),5000);
-}
+  if (loader2) {
+    setTimeout(() => setloader2(false), 5000);
+  }
 
 
-  
+
   const handleinput = (e) => {
     const { name, value } = e.target;
     setinputvalue({ ...inputvalue, [name]: value });
@@ -166,330 +166,321 @@ if(loader2){
 
   return (
     <>
-{loader ? 
-<Loader2/>
-:
-      <div className=" bg-[#f9f8f8]">
-        <div className="flex  w-full  items-start lg:flex-row flex-col">
-          <div className="flex flex-col px-5  lg:w-3/5 2xl:w-full border-zinc-300 border-r pb-24 pt-6 lg:pt-10 w-full bg-white h-full w-full   gap-5">
-            <div className="max-w-lg w-full mx-auto 2xl:ml-auto 2xl:mr-[200px] flex flex-col gap-5">
-              <div>
-                <div className={` md:pt-0 relative w-[140px] -mt-2`}>
-                 <Image src="/imgs/test.png" width={200} height={90} layout="responsive"/>
-                </div>
-              </div>
-              <div className="flex  flex-col  w-full gap-4">
-                <h5 className="md:text-xl font-semibold text-lg">
-                  Contact Information
-                </h5>
-
+      {loader ?
+        <Loader2 />
+        :
+        <div className=" bg-[#f9f8f8]">
+          <div className="flex  w-full  items-start lg:flex-row flex-col">
+            <div className="flex flex-col px-5  lg:w-3/5 2xl:w-full border-zinc-300 border-r pb-24 pt-6 lg:pt-10 w-full bg-white h-full w-full   gap-5">
+              <div className="max-w-lg w-full mx-auto 2xl:ml-auto 2xl:mr-[200px] flex flex-col gap-5">
                 <div>
-            
-                  <div className="flex relative flex-col gap-2  w-full">
-                    <input
-                      autoComplete="off"
-                      autoCorrect="off"
-                      type="email"
-                      id="email"
-                      value={inputvalue.email}
-                      required
-                      placeholder=" "
-                      onChange={handleinput}
-                      name="email"
-                      className={`${
-                        formErrors.email ? "border-red-400" : "border-zinc-500"
-                      }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
-                    />
-                    <label
-                      htmlFor="email"
-                      className="whitespace-nowrap labelt "
-                    >
-                      Email
-                    </label>
+                  <div className={` md:pt-0 relative w-[140px] -mt-2`}>
+                    <Image src="/imgs/test.png" width={200} height={90} layout="responsive" />
                   </div>
                 </div>
-              </div>
-              <div className="flex pt-5 border-t border-zinc-300 mt-3 flex-col gap-5">
-                <h5 className="md:text-xl font-semibold text-lg">
-                  Enter Your Delivery Details
-                </h5>
-                <form
-                  className="flex w-full   gap-10 mx-auto  flex-col"
-                  onSubmit={submitingform}
-                >
-                  <div className="flex gap-5 flex-col">
-                    <div className="flex w-full flex-col gap-2 ">
-                      <select
-                        onChange={handleselect}
-                        name="user_country"
-                        defaultValue={inputvalue.user_country}
-                        className="w-full h-[50px]   p-2  !border-zinc-500 rounded  text-zinc-800 border  focus:border-green-600 focus:ring-1 focus:ring-green-600  focus:outline-none"
-                      >
-                        {country.map((item, i) => (
-                          <option value={item.country_name} key={i}>
-                            {item.country_name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                <div className="flex  flex-col  w-full gap-4">
+                  <h5 className="md:text-xl font-semibold text-lg">
+                    Contact Information
+                  </h5>
 
-                    <div className="flex gap-10 md:flex-row flex-col">
-                      <div className="flex relative flex-col gap-2 w-full">
-                        <input
-                          autoComplete="off"
-                          autoCorrect="off"
-                          type="text"
-                          value={inputvalue.firstname}
-                          required
-                          onChange={handleinput}
-                          placeholder=" "
-                          id="fname"
-                          name="firstname"
-                          className={`${
-                            formErrors.lastname
-                              ? "border-red-400"
-                              : "border-zinc-500"
-                          }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
-                        />
-                        <label
-                          htmlFor="fname"
-                          className="whitespace-nowrap labelt "
-                        >
-                          First name
-                        </label>
-                      </div>
-                      <div className="flex relative flex-col gap-2 w-full">
-                        <input
-                          autoComplete="off"
-                          autoCorrect="off"
-                          type="text"
-                          value={inputvalue.lastname}
-                          required
-                          onChange={handleinput}
-                          placeholder=" "
-                          id="lname"
-                          name="lastname"
-                          className={`${
-                            formErrors.lastname
-                              ? "border-red-400"
-                              : "border-zinc-500"
-                          }  focus:border-green-600 text-[15px] st focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
-                        />
-                        <label
-                          htmlFor="lname"
-                          className="whitespace-nowrap labelt "
-                        >
-                          Last name
-                        </label>
-                      </div>
-                    </div>
+                  <div>
 
-                    <div className="flex flex-col gap-2 w-full">
-                      <div className="flex w-full flex-col gap-5">
-                        <div className="w-full relative">
-                          <input
-                            autoComplete="off"
-                            autoCorrect="off"
-                            type="text"
-                            placeholder=" "
-                            id="address1"
-                            value={inputvalue.user_address_line_1}
-                            required
-                            onChange={handleinput}
-                            name="user_address_line_1"
-                            className={`${
-                              formErrors.user_address_line_1
-                                ? "border-red-400"
-                                : "border-zinc-500"
-                            }  focus:border-green-600 st text-[15px] h-[50px] focus:ring-1 focus:ring-green-600  border w-full rounded  text-zinc-800 p-2 outline-none`}
-                          />
-                          <label
-                            htmlFor="address2"
-                            className="whitespace-nowrap labelt "
-                          >
-                            Address
-                          </label>
-                        </div>
-                        <div className="relative w-full">
-                          <input
-                            autoComplete="off"
-                            autoCorrect="off"
-                            type="text"
-                            id="address2"
-                            placeholder=" "
-                            value={inputvalue.user_address_line_2}
-                            required
-                            onChange={handleinput}
-                            name="user_address_line_2"
-                            className={`${
-                              formErrors.user_address_line_2
-                                ? "border-red-400"
-                                : "border-zinc-500"
-                            }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none w-full`}
-                          />
-                          <label
-                            htmlFor="address2"
-                            className="whitespace-nowrap labelt "
-                          >
-                            Apartment, suits, etc (optional)
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex gap-6 md:gap-7 sm:flex-row flex-col ">
-                      <div className="flex relative flex-col gap-2 w-full">
-                        <input
-                          autoComplete="off"
-                          autoCorrect="off"
-                          type="text"
-                          placeholder=" "
-                          id="city"
-                          value={inputvalue.user_city}
-                          required
-                          onChange={handleinput}
-                          name="user_city"
-                          className={`${
-                            formErrors.user_city
-                              ? "border-red-400"
-                              : "border-zinc-500"
-                          }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
-                        />
-                        <label
-                          htmlFor="city"
-                          className="whitespace-nowrap labelt "
-                        >
-                          City
-                        </label>
-                      </div>
-                      <div className="flex relative flex-col gap-2  w-full">
-                        <input
-                          autoComplete="off"
-                          autoCorrect="off"
-                          type="text"
-                          id="zip"
-                          value={inputvalue.user_zipcode}
-                          required
-                          placeholder=" "
-                          onChange={handleinput}
-                          name="user_zipcode"
-                          className={`${
-                            formErrors.user_zipcode
-                              ? "border-red-400"
-                              : "border-zinc-500"
-                          }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
-                        />
-                        <label
-                          htmlFor="zip"
-                          className="whitespace-nowrap labelt "
-                        >
-                          Postalcode
-                        </label>
-                      </div>
-                    </div>
-                    <div className="flex relative flex-col gap-2 w-full">
+                    <div className="flex relative flex-col gap-2  w-full">
                       <input
                         autoComplete="off"
                         autoCorrect="off"
-                        type="number"
-                        minLength="9"
-                        maxLength="11"
-                        value={inputvalue.user_mobile_number}
+                        type="email"
+                        id="email"
+                        value={inputvalue.email}
                         required
-                        onChange={handleNumber}
                         placeholder=" "
-                        id="number"
-                        name="user_mobile_number"
-                        className={`${
-                          formErrors.user_mobile_number
-                            ? "border-red-400"
-                            : "border-zinc-500"
-                        }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
+                        onChange={handleinput}
+                        name="email"
+                        className={`${formErrors.email ? "border-red-400" : "border-zinc-500"
+                          }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
                       />
                       <label
-                        htmlFor="number"
+                        htmlFor="email"
                         className="whitespace-nowrap labelt "
                       >
-                        Phone Number
+                        Email
                       </label>
                     </div>
-                    <div className="grid gap-6 md:gap-7 w-full md:grid-cols-3 grid-cols-1 "></div>
                   </div>
-                  {error && <ErrorButton text={error} />}
-                  <button
-                    onClick={submitingform}
-                    disabled={loader2}
-                    className={`${
-                      !loader2 ? "cursor-pointer" : "cursor-not-allowed"
-                    } text-[18px]  bg-[#184029] text-white font-bold  max-w-[250px] hover:bg-green-800 py-4 px-5 rounded`}
+                </div>
+                <div className="flex pt-5 border-t border-zinc-300 mt-3 flex-col gap-5">
+                  <h5 className="md:text-xl font-semibold text-lg">
+                    Enter Your Delivery Details
+                  </h5>
+                  <form
+                    className="flex w-full   gap-10 mx-auto  flex-col"
+                    onSubmit={submitingform}
                   >
-                    {loader2 ? <Loader3 /> : "Continue shopping"}
-                  </button>
-                  <div className="mt-10 text-sm border-t border-zinc-200 pt-4 ">
-                    <span>All rights reserved Cannaray GoGreenGanesha.</span>
-                  </div>
-                </form>
+                    <div className="flex gap-5 flex-col">
+                      <div className="flex w-full flex-col gap-2 ">
+                        <select
+                          onChange={handleselect}
+                          name="user_country"
+                          defaultValue={inputvalue.user_country}
+                          className="w-full h-[50px]   p-2  !border-zinc-500 rounded  text-zinc-800 border  focus:border-green-600 focus:ring-1 focus:ring-green-600  focus:outline-none"
+                        >
+                          {country.map((item, i) => (
+                            <option value={item.country_name} key={i}>
+                              {item.country_name}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <div className="flex gap-10 md:flex-row flex-col">
+                        <div className="flex relative flex-col gap-2 w-full">
+                          <input
+                            autoComplete="off"
+                            autoCorrect="off"
+                            type="text"
+                            value={inputvalue.firstname}
+                            required
+                            onChange={handleinput}
+                            placeholder=" "
+                            id="fname"
+                            name="firstname"
+                            className={`${formErrors.lastname
+                              ? "border-red-400"
+                              : "border-zinc-500"
+                              }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
+                          />
+                          <label
+                            htmlFor="fname"
+                            className="whitespace-nowrap labelt "
+                          >
+                            First name
+                          </label>
+                        </div>
+                        <div className="flex relative flex-col gap-2 w-full">
+                          <input
+                            autoComplete="off"
+                            autoCorrect="off"
+                            type="text"
+                            value={inputvalue.lastname}
+                            required
+                            onChange={handleinput}
+                            placeholder=" "
+                            id="lname"
+                            name="lastname"
+                            className={`${formErrors.lastname
+                              ? "border-red-400"
+                              : "border-zinc-500"
+                              }  focus:border-green-600 text-[15px] st focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
+                          />
+                          <label
+                            htmlFor="lname"
+                            className="whitespace-nowrap labelt "
+                          >
+                            Last name
+                          </label>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-2 w-full">
+                        <div className="flex w-full flex-col gap-5">
+                          <div className="w-full relative">
+                            <input
+                              autoComplete="off"
+                              autoCorrect="off"
+                              type="text"
+                              placeholder=" "
+                              id="address1"
+                              value={inputvalue.user_address_line_1}
+                              required
+                              onChange={handleinput}
+                              name="user_address_line_1"
+                              className={`${formErrors.user_address_line_1
+                                ? "border-red-400"
+                                : "border-zinc-500"
+                                }  focus:border-green-600 st text-[15px] h-[50px] focus:ring-1 focus:ring-green-600  border w-full rounded  text-zinc-800 p-2 outline-none`}
+                            />
+                            <label
+                              htmlFor="address2"
+                              className="whitespace-nowrap labelt "
+                            >
+                              Address
+                            </label>
+                          </div>
+                          <div className="relative w-full">
+                            <input
+                              autoComplete="off"
+                              autoCorrect="off"
+                              type="text"
+                              id="address2"
+                              placeholder=" "
+                              value={inputvalue.user_address_line_2}
+                              required
+                              onChange={handleinput}
+                              name="user_address_line_2"
+                              className={`${formErrors.user_address_line_2
+                                ? "border-red-400"
+                                : "border-zinc-500"
+                                }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none w-full`}
+                            />
+                            <label
+                              htmlFor="address2"
+                              className="whitespace-nowrap labelt "
+                            >
+                              Apartment, suits, etc (optional)
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex gap-6 md:gap-7 sm:flex-row flex-col ">
+                        <div className="flex relative flex-col gap-2 w-full">
+                          <input
+                            autoComplete="off"
+                            autoCorrect="off"
+                            type="text"
+                            placeholder=" "
+                            id="city"
+                            value={inputvalue.user_city}
+                            required
+                            onChange={handleinput}
+                            name="user_city"
+                            className={`${formErrors.user_city
+                              ? "border-red-400"
+                              : "border-zinc-500"
+                              }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
+                          />
+                          <label
+                            htmlFor="city"
+                            className="whitespace-nowrap labelt "
+                          >
+                            City
+                          </label>
+                        </div>
+                        <div className="flex relative flex-col gap-2  w-full">
+                          <input
+                            autoComplete="off"
+                            autoCorrect="off"
+                            type="text"
+                            id="zip"
+                            value={inputvalue.user_zipcode}
+                            required
+                            placeholder=" "
+                            onChange={handleinput}
+                            name="user_zipcode"
+                            className={`${formErrors.user_zipcode
+                              ? "border-red-400"
+                              : "border-zinc-500"
+                              }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
+                          />
+                          <label
+                            htmlFor="zip"
+                            className="whitespace-nowrap labelt "
+                          >
+                            Postalcode
+                          </label>
+                        </div>
+                      </div>
+                      <div className="flex relative flex-col gap-2 w-full">
+                        <input
+                          autoComplete="off"
+                          autoCorrect="off"
+                          type="number"
+                          minLength="9"
+                          maxLength="11"
+                          value={inputvalue.user_mobile_number}
+                          required
+                          onChange={handleNumber}
+                          placeholder=" "
+                          id="number"
+                          name="user_mobile_number"
+                          className={`${formErrors.user_mobile_number
+                            ? "border-red-400"
+                            : "border-zinc-500"
+                            }  focus:border-green-600 st text-[15px] focus:ring-1 focus:ring-green-600  h-[50px] text-base border  rounded  text-zinc-800 px-3 pt-2.5 outline-none`}
+                        />
+                        <label
+                          htmlFor="number"
+                          className="whitespace-nowrap labelt "
+                        >
+                          Phone Number
+                        </label>
+                      </div>
+                      <div className="grid gap-6 md:gap-7 w-full md:grid-cols-3 grid-cols-1 "></div>
+                    </div>
+                    {error && <ErrorButton text={error} />}
+                    <button
+                      onClick={submitingform}
+                      disabled={loader2}
+                      className={`${!loader2 ? "cursor-pointer" : "cursor-not-allowed"
+                        } text-[18px]  bg-[#184029] text-white font-bold  max-w-[250px] hover:bg-green-800 py-4 px-5 rounded`}
+                    >
+                      {loader2 ? <Loader3 /> : "Continue shopping"}
+                    </button>
+                    <div className="mt-10 text-sm border-t border-zinc-200 pt-4 ">
+                      <span>All rights reserved Cannaray GoGreenGanesha.</span>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="w-full lg:border-t-none 2xl:w-full border-t md:border-transparent border-zinc-300  lg:w-2/5  pt-10 md:pt-10 pb-20 h-full">
-            <div className=" lg:max-w-md px-5 mx-auto flex flex-col gap-5 lg:gap-7 2xl:mr-auto 2xl:ml-[200px]">
-              <div className="flex max-h-[700px] overflow-y-scroll divide-y divide-slate-200 flex-col items-center border-b border-slate-200">
-               
-               {item.map((data,i) => (
-                 <div key={i} className="flex py-3 justify-between w-full gap-5">
-<div className="min-w-[80px] relative">
-<Image src={data?.imgs[0]} width={50} height={50} layout="responsive" className="rounded-md"/>
-  </div>
-  <div className="w-full flex flex-col justify-between">
-<h2 className="break-words md:text-[18px] leading-6 inline-block">
-  {data?.name}
-</h2>
+            <div className="w-full lg:border-t-none 2xl:w-full border-t md:border-transparent border-zinc-300  lg:w-2/5  pt-10 md:pt-10 pb-20 h-full">
+              <div className=" lg:max-w-md px-5 mx-auto flex flex-col gap-5 lg:gap-7 2xl:mr-auto 2xl:ml-[200px]">
+                <div className="flex max-h-[700px] overflow-y-scroll divide-y divide-slate-200 flex-col items-center border-b border-slate-200">
 
-<p className="flex justify-between items-center gap-5">
-  <span>Qty : {data?.quantity}</span>
-  <span className="text-zinc-800 text-xl ">₹ {data?.price}</span>
+                  {item.map((data, i) => (
+                    <div key={i} className="flex py-3 justify-between w-full gap-5">
+                      <div className="min-w-[80px] relative">
+                        <Image src={data?.imgs[0]} width={50} height={50} layout="responsive" className="rounded-md" />
+                      </div>
+                      <div className="w-full flex flex-col justify-between">
+                        <h2 className="break-words md:text-[18px] leading-6 inline-block">
+                          {data?.name}
+                        </h2>
 
-</p>
-    </div>
-                   </div>
-               ))}
-              </div>
-              <div className="flex flex-col gap-4">
-                <div className="flex justify-between  md:text-lg text-zinc-800    gap-10">
-                  Subtotal:{" "}
-                  <span className="text-zinc-800 md:text-xl font-semibold text-lg font-cera_bold">
-                    {Toalvalue().subtotalformat}
-                  </span>
+                        <p className="flex justify-between items-center gap-5">
+                          <span>Qty : {data?.quantity}</span>
+                          <span className="text-zinc-800 text-xl ">₹ {data?.price}</span>
+
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex text-zinc-800 justify-between md:text-lg  pb-1">
-                                                Shipping Charges
-                                                <span className="font-semibold  text-zinc-800 text-lg">
-                                                      {parseInt(Toalvalue().subtotal.split("").slice(1,Toalvalue().subtotal.split("").length).join("")) >= 1000 ?
-                                                            "Free" :
-                                                            "+ ₹80"
-                                                    }
-                                                 </span>
-                                            </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex justify-between  md:text-lg text-zinc-800    gap-10">
+                    Subtotal:{" "}
+                    <span className="text-zinc-800 md:text-xl font-semibold text-lg font-cera_bold">
+                      {Toalvalue().subtotalformat}
+                    </span>
+                  </div>
+                  <div className="flex text-zinc-800 justify-between md:text-lg  pb-1">
+                    Shipping Charges
+                    <span className="font-semibold  text-zinc-800 text-lg">
+                      {parseInt(Toalvalue().subtotal.split("").slice(1, Toalvalue().subtotal.split("").length).join("")) >= 1000 ?
+                        "Free" :
+                        "+ ₹80"
+                      }
+                    </span>
+                  </div>
 
-                <div className="flex border-t border-zinc-300 pt-3  justify-between md:text-lg text-zinc-800 gap-10">
-                  Total:{" "}
-                  <span className="text-zinc-800 md:text-xl text-lg font-semibold">
-                  {Toalvalue().totalformat}
-                  </span>
+                  <div className="flex border-t border-zinc-300 pt-3  justify-between md:text-lg text-zinc-800 gap-10">
+                    Total:{" "}
+                    <span className="text-zinc-800 md:text-xl text-lg font-semibold">
+                      {Toalvalue().totalformat}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="">
-                <img
-                  src="/imgs/credit-card-secure.png"
-                  className="w-full"
-                  alt="secure payment"
-                />
+                <div className="">
+                  <img
+                    src="/imgs/credit-card-secure.png"
+                    className="w-full"
+                    alt="secure payment"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-         }
+      }
     </>
   );
 }
@@ -507,8 +498,8 @@ export function ErrorButton({ text }) {
 
 Checkout.getLayout = function getLayout(page) {
   return <>
-  <CartContextProvider>
-  {page}
-  </CartContextProvider>
-</>;
+    <CartContextProvider>
+      {page}
+    </CartContextProvider>
+  </>;
 };
