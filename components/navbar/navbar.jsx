@@ -35,7 +35,7 @@ const handleclose =()=> {
 const logout = (name) => {
   Cookies.remove("user");
   router.reload();
-};
+}
 
   return (
     <>
@@ -56,7 +56,7 @@ const logout = (name) => {
           <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
 </svg>
-          </button>
+        </button>
           <Link href="/">
         <a className="w-[130px]">
 <Image priority={true} width={100} height={50} layout="responsive" src="/imgs/white.png" />
@@ -65,12 +65,12 @@ const logout = (name) => {
         </div>
 
         <div className="hidden md:flex gap-7 justify-center items-center w-full">
-<Navlink text="clay ganesha" link="/clay-ganesha"/>
+<Navlink  text="clay ganesha" link="/clay-ganesha"/>
 <Navlink text="paper ganesha" link="/paper-ganesha"/>
 <Navlink text="plant ganesha" link="/plant-ganesha"/>
         </div>
-        <div className="flex gap-2  items-center">
-          <div className="flex gap-1  text-white items-center">
+        <div className="flex   items-center">
+          <div className="flex  text-white items-center">
 {user!== null ? 
 <div>
                 <div className="relative group py-2 cursor-default">

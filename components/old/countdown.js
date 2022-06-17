@@ -55,15 +55,15 @@ const Index = () => {
   return (
     <>
       <div  className=" bg-cover bg-no-repeat ">
-      <section className="text-center text-white bg-black bg-opacity-90 bg-cover backdrop-blur-sm  flex-row  lg:flex sm:items-center gap-x-10 sm:justify-center     ">
+      <section className="text-center text-white bg-black bg-opacity-90 bg-cover backdrop-blur-sm  flex-row  lg:flex sm:items-center  sm:justify-center     ">
 
       
 <div className=' ' >
 <Image
 
 src="/imgs/countimg.png"
-width={400}
-height={500}
+width={300}
+height={300}
 className="sm:w-full "
 
 />

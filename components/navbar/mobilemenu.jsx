@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function Mobilemenu ({transition,passclose}){
+   
     return(
         <div className={`fixed flex justify-between flex-col bg-[#184029]  z-30 top-0 left-0 w-full h-full transition-all duration-200 ease-linear ${transition}`}>    
 <div className=" pt-5 flex flex-col gap-5">
@@ -16,7 +17,7 @@ export default function Mobilemenu ({transition,passclose}){
         </button>
     </div>
     <div className="flex divide-y px-5 divide-green-900 flex-col">
-<Navlink text="Clay ganesha" link="/clay-ganesha"/>
+<Navlink  text="Clay ganesha" link="/clay-ganesha"/>
 <Navlink text="Paper ganesha" link="/paper-ganesha"/>
 <Navlink text="Plant ganesha" link="/plan-ganesha"/>
 <Navlink text="Cart" link="/cart"/>
