@@ -78,9 +78,9 @@ export default function ClayGanesha() {
               Eco Plant Ganeshas Idols
             </Heading>
             <Paragraph extra="max-w-2xl mx-auto">
-              Ganesha idol is Made of natural RedSoil, organic fertilizer,
+              Ganesha idol is Made of natural Red mud, organic fertilizer,
               no artificial color, with plant seeds,
-              this unique concept is designed to grow into a plant after immersion.,{" "}
+              This unique concept is designed to grow into a plant after immersion.{" "}
             </Paragraph>
           </div>
         </div>

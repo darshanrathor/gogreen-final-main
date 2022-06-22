@@ -78,7 +78,7 @@ export default function ClayGanesha() {
               Eco Clay Ganeshas Idols
             </Heading>
             <Paragraph extra="max-w-2xl mx-auto">
-              clay idol made of clay which is river mud comes in grey color.
+              Clay idol made of clay which is river mud comes in grey color.
               Easily dissolves in water and can be used in plants to certain extent.
               The colors used over the idols are also not harmful in nature.
               {" "}

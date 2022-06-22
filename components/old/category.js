@@ -26,6 +26,15 @@ export default function Category() {
 				</div>
 				<div className="w-full max-w-[1200px] gap-12 mx-auto flex flex-col  sm:flex-row  gap-y-10 ">
 
+				<CategoryItem
+						data={{
+							image: "/imgs/WhatsApp Image 2022-06-10 at 7.28.00 AM.jpeg",
+							name: "Plant Ganesha",
+							desc: "Idols made of red soil used for planting after visarjan",
+							url: "plant-ganesha",
+						}}
+					/>
+
 					<CategoryItem
 						data={{
 							image: "/imgs/15.png",
@@ -42,14 +51,7 @@ export default function Category() {
 							url: "paper-ganesha",
 						}}
 					/>
-					<CategoryItem
-						data={{
-							image: "/imgs/WhatsApp Image 2022-06-10 at 7.28.00 AM.jpeg",
-							name: "Plant Ganesha",
-							desc: "Idols made of red soil used for planting after visarjan",
-							url: "plant-ganesha",
-						}}
-					/>
+					
 				</div>
 			</div>
 		</>
