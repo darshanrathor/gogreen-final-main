@@ -39,7 +39,7 @@ export default function Category() {
 							image: "/imgs/Papper.jpg",
 							name: "Paper Ganesha",
 							desc: "Lightweight idols made of paper mache & non toxic colors",
-							url: "papper-ganesha",
+							url: "paper-ganesha",
 						}}
 					/>
 					<CategoryItem

@@ -5,6 +5,7 @@ const height = [
   { value: "15", label: "15 Inches" },
   { value: "18", label: "18 Inches" },
   { value: "21", label: "21 Inches" },
+  { value: "24", label: "24 Inches" },
 ];
 
 
@@ -33,8 +34,8 @@ export default function AnimatedMulti({ passheight }) {
 
   return (
     <div className=" border-slate-200 border-t">
-      <div className="max-w-7xl bg-white flex-row gap-8 flex pt-5 pb-3  justify-between w-full  mx-auto px-5">
-        <div className="flex gap-3 sm:flex-row flex-col w-full sm:items-center">
+      <div className="max-w-7xl bg-white flex-row gap-8 flex pt-5 pb-3  justify-between  mx-auto px-5">
+        <div className="flex gap-3 sm:flex-row flex-col w-full sm:items-center  ">
           <label className="font-semibold whitespace-nowrap text-lg">Height (IN)</label>
           <div className="relative bg-red-100  sm:w-[170px] ">
             <div className="border bg-white text-lg absolute z-10 hover:shadow-lg top-[-5px] sm:top-[-20px] left-0  w-full border-zinc-400 px-2.5 pt-[6px] pb-[10px] rounded-[7px]">
@@ -81,7 +82,7 @@ export default function AnimatedMulti({ passheight }) {
             </div>
           </div>
         </div>
-        <div className="flex gap-1.5 sm:gap-3 w-full sm:flex-row flex-col  sm:items-center  items-end md:justify-end">
+        {/*<div className="flex gap-1.5 sm:gap-3 w-full sm:flex-row flex-col  sm:items-center  items-end md:justify-end">
           <label className="font-semibold text-lg whitespace-nowrap text-zinc-700 ">
             Sort by
           </label>
@@ -90,7 +91,7 @@ export default function AnimatedMulti({ passheight }) {
             <option value="hight">Price Hight to Low</option>
             <option value="low">Price Low to High</option>
           </select>
-        </div>
+                  </div>*/}
       </div>
     </div>
   );

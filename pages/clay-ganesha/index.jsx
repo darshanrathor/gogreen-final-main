@@ -75,7 +75,7 @@ export default function ClayGanesha() {
         <div className="max-w-7xl w-full mx-auto">
           <div className="flex flex-col gap-5 max-w-4xl text-center mx-auto px-5">
             <Heading size="md:text-[50px] text-[40px]">
-              Eco clay-ganeshas Idols
+              Eco Clay Ganeshas Idols
             </Heading>
             <Paragraph extra="max-w-2xl mx-auto">
               clay idol made of clay which is river mud comes in grey color.

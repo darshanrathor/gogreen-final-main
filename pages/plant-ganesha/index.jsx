@@ -12,24 +12,61 @@ import { color, ProductBackground } from "../../components/utils/feture";
 const rudraksha = require("../../components/jsondata/rudraksha.json");
 
 export default function ClayGanesha() {
-const [loader,setloader] = useState(true);
-const [product,setproducts] = useState([]);
+  const [loader, setloader] = useState(true);
+  const [product, setproducts] = useState([]);
+  const [allproducts, setallproducts] = useState();
 
 
-useEffect(()=> {
-  fetchAstrologer();
-},[]);
+  useEffect(() => {
+    fetchAstrologer();
+  }, []);
 
 
-const fetchAstrologer = async () => {
-  const { data, error } = await supabase
-    .from("plant-ganesha")
-    .select("*")
-  // .order("id", { isActive: true });
-  setloader(false);
-  setproducts(data);
-  return data;
-};
+  const fetchAstrologer = async () => {
+    const { data, error } = await supabase
+      .from("plant-ganesha")
+      .select("*")
+    // .order("id", { isActive: true });
+    setloader(false);
+    setproducts(data);
+    setallproducts(data);
+    return data;
+  };
+
+  const handlefilter = (e, o) => {
+    // console.log(e.length === 0 && o !== "latest")
+    if (e.length === 0) {
+      setproducts(allproducts);
+    }
+    // else if (e.length === 0 && o !== "latest") {
+    //   if (o === "high") {
+    //     const hight = allproducts.sort((a, b) => parseInt(b?.price) - parseInt(a?.price));
+    //     setproducts(hight);
+    //   }
+    //   else if (o === "low") {
+    //     const low = allproducts.sort((a, b) => parseInt(a?.price) - parseInt(b?.price));
+    //     setproducts(low);
+    //   }
+    // }
+    else {
+      const arr = allproducts.filter((item, i) => {
+        return e.indexOf(item?.inch) > -1
+      });
+      // if (o === "high") {
+      //   arr.sort((a, b) => parseInt(b?.price) - parseInt(a?.price));
+      //   setproducts(arr);
+      // }
+      // else if (o === "low") {
+      //   arr.sort((a, b) => parseInt(a?.price) - parseInt(b?.price));
+      //   setproducts(arr);
+      // }
+      // else {
+      setproducts(arr);
+      // }
+    }
+
+  }
+
 
 
   return (
@@ -38,35 +75,35 @@ const fetchAstrologer = async () => {
         <div className="max-w-7xl w-full mx-auto">
           <div className="flex flex-col gap-5 max-w-4xl text-center mx-auto px-5">
             <Heading size="md:text-[50px] text-[40px]">
-              Eco clay-ganeshas Idols
+              Eco Plant Ganeshas Idols
             </Heading>
             <Paragraph extra="max-w-2xl mx-auto">
-               Ganesha idol is Made of natural clay, organic fertilizer, 
-            no artificial color, with plant seeds, 
-            this unique concept is designed to grow into a plant after immersion.,{" "}
+              Ganesha idol is Made of natural RedSoil, organic fertilizer,
+              no artificial color, with plant seeds,
+              this unique concept is designed to grow into a plant after immersion.,{" "}
             </Paragraph>
           </div>
         </div>
       </div>
-      <AnimatedMulti />
-      {loader ? <Loader2/> : 
-      <div className="px-5 mt-4 w-full max-w-7xl mx-auto md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:grid-cols-4 grid ">
-       <Trail open={true}>
-       {product.map((item,i) => (
-        <Product
-         key={i}
-         category="plant-ganesha"
-         color={ProductBackground(color, i)}
-         url={item.url}
-         data={item}
-         name={item.name}
-         img={item.imgs[0]}
-         amount={item.price}
-       />
-       ))}
-              </Trail>      
-      </div>
-}
+      <AnimatedMulti passheight={handlefilter} />
+      {loader ? <Loader2 /> :
+        <div className="px-5 mt-4 w-full max-w-7xl mx-auto md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:grid-cols-4 grid ">
+          <Trail open={true}>
+            {product.map((item, i) => (
+              <Product
+                key={i}
+                category="plant-ganesha"
+                color={ProductBackground(color, i)}
+                url={item.url}
+                data={item}
+                name={item.name}
+                img={item.imgs[0]}
+                amount={item.price}
+              />
+            ))}
+          </Trail>
+        </div>
+      }
     </div>
   );
 }
