@@ -442,6 +442,8 @@ export default function ClayGaneshaSlug() {
 
 
                 </div>
+
+                
                 <div
                   className={`${text === "specification"
                     ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
@@ -485,14 +487,12 @@ export default function ClayGaneshaSlug() {
                     </div>
                   )}
 
-
-
-
-
-
-
-
                 </div>
+
+
+
+
+
                 <div
                   className={`${text === "additional"
                     ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "

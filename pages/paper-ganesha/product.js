@@ -386,6 +386,56 @@ export default function PapperGaneshaSlug() {
                     </div>
                   )}
                 </div>
+
+
+                <div
+                  className={`${text === "specification"
+                    ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
+                    : "border-transparent rounded-lg"
+                    } border flex flex-col gap-4`}
+                >
+                  <button
+                    onClick={() =>
+                      settext((prev) => (prev === "specification" ? "" : "specification"))
+                    }
+                    className={`${text === "desc" ? "rounded-t-lg" : " rounded-lg"
+                      } bg-gradient-to-r from-green-50 to-teal-50  p-4  w-full   flex justify-between text-left cursor-pointer font-semibold text-xl md:text-2xl`}
+                  >
+                    Specification
+                    <span className=" block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`${text === "desc" ? "transform rotate-180" : ""
+                          } fill-zinc-800 h-5 w-5 transition duration-100 ease-in`}
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  {text === "specification" && (
+                    <div className="flex   flex-col pb-5 px-5 gap-2 sm:gap-4">
+                      {product?.description?.specification?.map((item, i) => (
+                        <div key={i} className="flex  py-2 gap-4 sm:gap-12">
+                          <h6 className="w-full max-w-[80px] col-span-2 font-semibold">
+                            {item.title}
+                          </h6>
+                          <p className="md:text-lg  col-span-10 break-words ">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                </div>
+
+
+
+
                 <div
                   className={`${text === "additional"
                     ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
@@ -452,6 +502,18 @@ export default function PapperGaneshaSlug() {
                     >
                       Features
                     </li>
+
+                    <li
+                      className={`py-3.5
+                 ${text === "specification" ? "bg-slate-50" : ""
+                        } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
+                      onClick={() => handleClick("specification")}
+                    >
+                      Specification
+                    </li>
+
+
+
                     <li
                       className={`py-3.5
                  ${text === "additional" ? "bg-slate-50" : ""
