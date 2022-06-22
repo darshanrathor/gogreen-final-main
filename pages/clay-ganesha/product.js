@@ -33,7 +33,6 @@ export default function ClayGaneshaSlug() {
       .from("clay-ganesha")
       .select("*")
       .eq("url", id)
-      .limit(1)
       .single()
     // .order("id", { isActive: true });
     setproducts(data);

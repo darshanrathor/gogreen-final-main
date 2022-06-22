@@ -4,12 +4,10 @@ import useCart from "../context/cartHooks";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
-import Popupcart from "./popupcart";
+// import Popupcart from "./popupcart";
 export function Product(props) {
   const { addtocart } = useCart();
   const [popup, setpopup] = useState(false);
-
-
 
   const handlecart = (e) => {
     setpopup((prev) => !prev);
