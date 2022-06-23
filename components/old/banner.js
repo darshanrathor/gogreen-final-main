@@ -20,7 +20,7 @@ export default function Baner() {
 						</div>
 
 						<div>
-							<Image layout="responsive" src="/imgs/website_banner.jpg" alt="banner1" width={2030} height={700} />
+							<Image layout="responsive" src="/imgs/cate_banner.jpg" alt="banner1" width={2030} height={700} />
 
 						</div>
 
@@ -28,7 +28,7 @@ export default function Baner() {
 							<Image layout="responsive" src="/imgs/caly-banner.jpg" alt="banner2" width={2030} height={700} />
 						</div>
 						<div>
-							<Image layout="responsive" src="/imgs/redsoil-banner.jpg" alt="banner2" width={2030} height={700} />
+							<Image layout="responsive" src="/imgs/redsoil_banner.jpg" alt="banner2" width={2030} height={700} />
 						</div>
 						<div>
 							<Image layout="responsive" src="/imgs/paper-banner.jpg" alt="banner2" width={2030} height={700} />

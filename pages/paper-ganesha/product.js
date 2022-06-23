@@ -15,6 +15,7 @@ export default function PapperGaneshaSlug() {
   const [qty, setqty] = useState({ qty: 1 });
   const [text, settext] = useState("desc");
   const [popup, setpopup] = useState(false);
+  const [images, setimage] = useState(0);
   const [product, setproducts] = useState(null);
   const { addtocart, increase, decrease, cartItem } = useCart();
 
@@ -87,7 +88,10 @@ export default function PapperGaneshaSlug() {
     setTimeout(() => setpopup(false), 3000);
   }
 
-
+  const handleiamge = (i) => {
+    setimage(i);
+  }
+// console.log(product?.imgs)
 
   return (
     <>
@@ -124,18 +128,19 @@ export default function PapperGaneshaSlug() {
                 <div className="max-w-7xl  mx-auto pt-8 md:gap-10 md:flex-row flex-col gap-10 flex px-5">
                   <div className=" w-full md:w-1/2">
                     <div className="flex-col-reverse flex gap-2">
-                      <div className="flex w-full flex-col gap-4 md:gap-2">
+                      <div className="flex w-full gap-4 md:gap-2">
                         {product?.imgs?.map((item, i) => (
                           <div
                             key={i}
-                            className={`bg-gray-50 flex cursor-pointer rounded-md  border-2 border-zinc-800  max-w-max`}
+                            onClick={() => handleiamge(i)}
+                            className={`${images === i ? "border-zinc-800" : "border-zinc-200"} bg-gray-50 flex cursor-pointer rounded-md  border-2   max-w-max`}
                           >
                             <Image
                               src={item}
                               loading="lazy"
                               alt={product?.name}
-                              height={120}
-                              width={140}
+                              height={80}
+                              width={80}
                               objectFit="cover"
                             />
                           </div>
@@ -149,7 +154,7 @@ export default function PapperGaneshaSlug() {
                           height={100}
                           width={100}
                           loading="lazy"
-                          src={product?.imgs[0]}
+                          src={product?.imgs[images] ? product?.imgs[images] : ""}
                           alt={product?.name}
                           className="rounded"
                         />
@@ -436,7 +441,7 @@ export default function PapperGaneshaSlug() {
 
 
 
-                <div
+                {/* <div
                   className={`${text === "additional"
                     ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
                     : "border-transparent rounded-lg"
@@ -479,6 +484,12 @@ export default function PapperGaneshaSlug() {
                     </div>
                   )}
                 </div>
+                      */}
+
+
+
+
+
               </div>
 
               {/*desktop description*/}
@@ -503,25 +514,28 @@ export default function PapperGaneshaSlug() {
                       Features
                     </li>
 
-                    <li
-                      className={`py-3.5
-                 ${text === "specification" ? "bg-slate-50" : ""
-                        } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
-                      onClick={() => handleClick("specification")}
-                    >
-                      Specification
-                    </li>
+                    {/*<li
+                        className={`py-3.5
+                  ${text === "specification" ? "bg-slate-50" : ""
+                          } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
+                        onClick={() => handleClick("specification")}
+                      >
+                        Specification
+                      </li>
+                        */}
 
 
 
-                    <li
+                    {/*  <li
                       className={`py-3.5
                  ${text === "additional" ? "bg-slate-50" : ""
                         } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
                       onClick={() => handleClick("additional")}
                     >
                       Additional Information
-                    </li>
+                      </li>*/}
+
+
                   </ul>
                   <div className="p-6">
                     {text === "desc" && (
@@ -571,6 +585,26 @@ export default function PapperGaneshaSlug() {
                       </div>
                     )}
                   </div>
+
+
+                  <div className="max-w-6xl border border-slate-200 rounded bg-slate-50 mx-auto mt-5 w-full mb-10">
+
+                    <ul className="flex divide-x divide-slate-200  rounded-l bg-white   w-full font-bold font-body">
+                      <li
+                        className={`py-3.5
+${text === "additional" ? "bg-slate-50" : ""
+                          } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
+                        onClick={() => handleClick("additional")}
+                      >
+                        Specification
+                      </li>
+
+                    </ul>
+                  </div>
+
+
+
+
                 </div>
               </div>
 

@@ -17,6 +17,8 @@ export default function PlantGaneshaSlug() {
   const [text, settext] = useState("desc");
   const [popup, setpopup] = useState(false);
   const [product, setproducts] = useState(null);
+  const [images, setimage] = useState(0);
+  // const [images, setimage] = useState("");
   const { addtocart, increase, decrease, cartItem } = useCart();
 
   const router = useRouter();
@@ -89,6 +91,11 @@ export default function PlantGaneshaSlug() {
   }
 
 
+  const handleiamge = (i) => {
+    setimage(i);
+  }
+
+
   return (
     <>
       {product ?
@@ -124,18 +131,19 @@ export default function PlantGaneshaSlug() {
                 <div className="max-w-7xl  mx-auto pt-8 md:gap-10 md:flex-row flex-col gap-10 flex px-5">
                   <div className=" w-full md:w-1/2">
                     <div className="flex-col-reverse flex gap-2">
-                      <div className="flex w-full flex-col gap-4 md:gap-2">
+                      <div className="flex w-full gap-4 md:gap-2">
                         {product?.imgs?.map((item, i) => (
                           <div
                             key={i}
-                            className={`bg-gray-50 flex cursor-pointer rounded-md  border-2 border-zinc-800  max-w-max`}
+                            onClick={() => handleiamge(i)}
+                            className={`${images === i ? "border-zinc-800" : "border-zinc-200"} bg-gray-50 flex cursor-pointer rounded-md  border-2   max-w-max`}
                           >
                             <Image
                               src={item}
                               loading="lazy"
                               alt={product?.name}
-                              height={120}
-                              width={140}
+                              height={80}
+                              width={80}
                               objectFit="cover"
                             />
                           </div>
@@ -149,7 +157,7 @@ export default function PlantGaneshaSlug() {
                           height={100}
                           width={100}
                           loading="lazy"
-                          src={product?.imgs[0]}
+                          src={product?.imgs[images] ? product?.imgs[images] : ""}
                           alt={product?.name}
                           className="rounded"
                         />
@@ -398,7 +406,7 @@ export default function PlantGaneshaSlug() {
                     onClick={() =>
                       settext((prev) => (prev === "specification" ? "" : "specification"))
                     }
-                    className={`${text === "desc" ? "rounded-t-lg" : " rounded-lg"
+                    className={`${text === "desc" ? "rounded-t-lg" : " rounded-lg "
                       } bg-gradient-to-r from-green-50 to-teal-50  p-4  w-full   flex justify-between text-left cursor-pointer font-semibold text-xl md:text-2xl`}
                   >
                     Specification
@@ -419,15 +427,17 @@ export default function PlantGaneshaSlug() {
                     </span>
                   </button>
                   {text === "specification" && (
-                    <div className="flex   flex-col pb-5 px-5 gap-2 sm:gap-4">
-                      {product?.description?.specification?.map((item, i) => (
-                        <div key={i} className="flex  py-2 gap-4 sm:gap-12">
-                          <h6 className="w-full max-w-[80px] col-span-2 font-semibold">
-                            {item.title}
-                          </h6>
-                          <p className="md:text-lg  col-span-10 break-words ">{item.desc}</p>
-                        </div>
-                      ))}
+                    <div className=" px-5  pb-5 ">
+                      <h3 className="start py-1  text-lg md:text-xl "> With Gogreen Ganesha </h3>
+                      <p className="start py-3 text-base md:text-xl">Let us celebrate this year Ganesh Chaturthi in an eco-friendly way by welcoming your home a
+                        Murti of Go Green Ganesha. It is basically made up of Red Soil, Organic Fertilizers, Natural Colors and Seeds that will transform Ganesha Murti into a plant.
+                        Just by changing the material used to create the Murti, we managed to change the way people looked at immersions during the festival. To complete the immersion ritual with a Go Green Ganesha Murti,
+                        all we need is a sprinkle of water and the best part is, it can be done in one's own backyard instead of being carried to a waterbody.
+                        This exciting new format instantly touched a chord with people. It not only solves the water pollution issue but also creates a huge environmental impact for water bodies that get polluted every year.
+                      </p>
+
+                      <p className="start py-3 text-base md:text-xl " >So, Book your Go Green Ganesha now and contribute a bit to Nature! "</p>
+
                     </div>
                   )}
 
@@ -435,7 +445,7 @@ export default function PlantGaneshaSlug() {
 
 
 
-                <div
+                {/*<div
                   className={`${text === "additional"
                     ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
                     : "border-transparent rounded-lg"
@@ -478,6 +488,13 @@ export default function PlantGaneshaSlug() {
                     </div>
                   )}
                 </div>
+                      */}
+
+
+
+
+
+
               </div>
 
               {/*desktop description*/}
@@ -502,17 +519,17 @@ export default function PlantGaneshaSlug() {
                       Features
                     </li>
 
-                    <li
+                    {/*<li
                       className={`py-3.5
                  ${text === "specification" ? "bg-slate-50" : ""
                         } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
                       onClick={() => handleClick("specification")}
                     >
                       Specification
-                    </li>
+                      </li> */}
 
 
-                    <li
+                    {/*  <li
                       className={`py-3.5
                  ${text === "additional" ? "bg-slate-50" : ""
                         } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
@@ -520,6 +537,11 @@ export default function PlantGaneshaSlug() {
                     >
                       Additional Information
                     </li>
+
+                      */}
+
+
+
                   </ul>
                   <div className="p-6">
                     {text === "desc" && (
@@ -534,18 +556,7 @@ export default function PlantGaneshaSlug() {
                         ))}
                       </div>
                     )}
-                    {text === "additional" && (
-                      <div className="flex divide-y border rounded px-5 flex-col">
-                        {product?.description?.additional?.map((item, i) => (
-                          <div key={i} className="grid grid-cols-12  py-3 gap-14">
-                            <h6 className="text-lg col-span-2 font-semibold">
-                              {item.title}
-                            </h6>
-                            <p className="md:text-lg col-span-10 ">{item.desc}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+
 
                     {text === "feature" && (
                       <div className="grid grid-cols-2 md:grid-cols-3  rounded px-5 ">
@@ -569,8 +580,44 @@ export default function PlantGaneshaSlug() {
                       </div>
                     )}
                   </div>
+
+
+
+
+
+
+
+
+
+
                 </div>
               </div>
+
+
+
+              <div className="sm:block mt-14 hidden ">
+                <div className="max-w-6xl border border-slate-200 rounded bg-slate-50 mx-auto mt-5 w-full mb-10">
+                  <div className=" p-10  ">
+
+                    <h2 className="font-semibold md:text-[27px] uppercase"> Specification</h2>
+
+                    <h3 className="start py-1 mt-4 text-xl "> With Gogreen Ganesha </h3>
+                    <p className="start py-3 text-xl">Let us celebrate this year Ganesh Chaturthi in an eco-friendly way by welcoming your home a
+                      Murti of Go Green Ganesha. It is basically made up of Red Soil, Organic Fertilizers, Natural Colors and Seeds that will transform Ganesha Murti into a plant.
+                      Just by changing the material used to create the Murti, we managed to change the way people looked at immersions during the festival. To complete the immersion ritual with a Go Green Ganesha Murti,
+                      all we need is a sprinkle of water and the best part is, it can be done in one's own backyard instead of being carried to a waterbody.
+                      This exciting new format instantly touched a chord with people. It not only solves the water pollution issue but also creates a huge environmental impact for water bodies that get polluted every year.
+                    </p>
+
+                    <p className="start py-3 text-xl " >So, Book your Go Green Ganesha now and contribute a bit to Nature! "</p>
+
+                  </div>
+                </div>
+
+              </div>
+
+
+
 
               <ClayRandom name="plant-ganesha" url={product?.url} />
             </div>
