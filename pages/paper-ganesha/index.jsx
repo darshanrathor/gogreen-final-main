@@ -88,7 +88,7 @@ const handlefilter = (e, o) => {
       </div>
       <AnimatedMulti passheight={handlefilter} />
       {loader ? <Loader2/> : 
-      <div className="px-5 mt-4 w-full max-w-7xl mx-auto md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:grid-cols-4 grid ">
+      <div className="px-5 mt-10 md:mt-4 w-full max-w-7xl mx-auto md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:grid-cols-4 grid ">
        <Trail open={true}>
        {product.map((item,i) => (
         <Product

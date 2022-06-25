@@ -184,7 +184,7 @@ export default function ClayGaneshaSlug() {
                 <div className="max-w-7xl  mx-auto pt-8 md:gap-10 md:flex-row flex-col gap-10 flex px-5">
                   <div className=" w-full md:w-1/2">
                     <div className="flex-col-reverse flex gap-2">
-                    <div className="flex w-full gap-4 md:gap-2">
+                      <div className="flex w-full gap-4 md:gap-2">
                         {product?.imgs?.map((item, i) => (
                           <div
                             key={i}
@@ -312,7 +312,7 @@ export default function ClayGaneshaSlug() {
                           <a
                             target="_blank"
                             rel="noreferrer"
-                            href="https://wa.me/918169882692/?text=I am interested to buy"
+                            href={`https://wa.me/918169882692/?text=Hii, Gogreenganesha, %0a %0a I want to order this ${product?.name} murti %0a  https://gogreenganesha.com/clay-ganesha/product?q=21inch-shadu-matti-side-mandi`}
                             className="text-base md:mx-12 rounded-full hover:scale-[1.05] transform transition duration-200 ease-in bg-green-600 uppercase text-white font-semibold hover:bg-green-700 flex gap-3 justify-center items-center  px-4 py-3 max-w-sm w-full"
                           >
                             <span>
@@ -456,7 +456,7 @@ export default function ClayGaneshaSlug() {
 
 
 
-               {/*        
+                {/*        
                 <div
                   className={`${text === "additional"
                     ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
@@ -504,7 +504,7 @@ export default function ClayGaneshaSlug() {
                       */}
 
 
-<div
+                <div
                   className={`${text === "specification"
                     ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
                     : "border-transparent rounded-lg"
@@ -538,10 +538,10 @@ export default function ClayGaneshaSlug() {
                     <div className=" px-5  pb-5 ">
                       <h3 className="start py-1  text-lg md:text-xl "> With Gogreen Ganesha </h3>
                       <p className="start py-3 text-base md:text-xl">Let us celebrate this year Ganesh Chaturthi in an eco-friendly way by welcoming your home a Murti of Go Green Ganesha.
-        It is basically made up of River Mud, Natural Colors that will not harm the mother nature after visarjan.
-        Just by changing the material used to create the Murti, we managed to change the way people looked at immersions during the festival. 
-        To complete the immersion ritual with a Go Green Ganesha Murti, all we need is a sprinkle of water and the best part is, it can be done in one's own backyard instead of being carried to a waterbody. 
-        This exciting new format instantly touched a chord with people. It not only solves the water pollution issue but also creates a huge environmental impact for water bodies that get polluted every year.
+                        It is basically made up of River Mud, Natural Colors that will not harm the mother nature after visarjan.
+                        Just by changing the material used to create the Murti, we managed to change the way people looked at immersions during the festival.
+                        To complete the immersion ritual with a Go Green Ganesha Murti, all we need is a sprinkle of water and the best part is, it can be done in one's own backyard instead of being carried to a waterbody.
+                        This exciting new format instantly touched a chord with people. It not only solves the water pollution issue but also creates a huge environmental impact for water bodies that get polluted every year.
                       </p>
 
                       <p className="start py-3 text-base md:text-xl " >So, Book your Go Green Ganesha now and contribute a bit to Nature! "</p>
@@ -591,7 +591,7 @@ export default function ClayGaneshaSlug() {
 
 
 
-                  {/*  <li
+                    {/*  <li
                       className={`py-3.5
                  ${text === "additional" ? "bg-slate-50" : ""
                         } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
@@ -616,7 +616,7 @@ export default function ClayGaneshaSlug() {
 
 
 
-                <div className="p-6">
+                  <div className="p-6">
                     {text === "desc" && (
                       <div className="flex flex-col gap-5">
                         {product?.description?.description?.map((item, i) => (
