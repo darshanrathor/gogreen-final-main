@@ -35,6 +35,8 @@ export default function ClayGanesha() {
 
   const handlefilter = (e, o) => {
     // console.log(e.length === 0 && o !== "latest")
+
+
     if (e.length === 0) {
       setproducts(allproducts);
     }
@@ -52,6 +54,7 @@ export default function ClayGanesha() {
       const arr = allproducts.filter((item, i) => {
         return e.indexOf(item?.inch) > -1
       });
+
       // if (o === "high") {
       //   arr.sort((a, b) => parseInt(b?.price) - parseInt(a?.price));
       //   setproducts(arr);

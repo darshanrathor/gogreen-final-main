@@ -1,8 +1,9 @@
-import { sendemail } from "../sendemail/ordersuccessemail";
+// import { sendemail } from "../sendemail/ordersuccessemail";
 import { supabase } from "../supabase/supabase";
 import { initializeRazorpay } from "../utils/razorpay";
 
 async function displayRazorpay(email, name, mobilenumber, amount1, item) {
+
   if (email === null) {
     setlogin(true);
   } else {

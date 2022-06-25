@@ -259,7 +259,7 @@ export default function PlantGaneshaSlug() {
                           <a
                             target="_blank"
                             rel="noreferrer"
-                            href={`https://api.whatsapp.com/send?phone=918169882692`}
+                            href={`https://wa.me/918169882692/?text=I  am interested to buy ${product?.name}`}
                             className="text-base md:mx-12 rounded-full hover:scale-[1.05] transform transition duration-200 ease-in bg-green-600 uppercase text-white font-semibold hover:bg-green-700 flex gap-3 justify-center items-center  px-4 py-3 max-w-sm w-full"
                           >
                             <span>

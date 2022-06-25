@@ -17,6 +17,7 @@ export default function AnimatedMulti({ passheight }) {
   const handlechange = (e) => {
     const { value } = e.target;
     const index = filterval.indexOf(value);
+
     if (index === -1) {
       setfiltervalue((prev) => [...prev, value]);
       passheight([...filterval, value]);
@@ -25,6 +26,7 @@ export default function AnimatedMulti({ passheight }) {
       setfiltervalue(samevalue);
       passheight(samevalue);
     }
+    setfilter(prev => !prev);
   };
 
   const handleselect = (e) => {
@@ -43,7 +45,7 @@ export default function AnimatedMulti({ passheight }) {
                 onClick={() => setfilter((prev) => !prev)}
                 className="flex sm:text-base text-[15px]  justify-between w-full gap-5 items-center text-zinc-800 "
               >
-                All heights
+                {filterval.length > 0 ? `(${filterval.length}) Filter` : "All heights"}
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

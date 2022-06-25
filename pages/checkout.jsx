@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { supabase } from "../components/supabase/supabase";
 import displayRazorpay from "../components/paymentbutton/razorpay";
 import CartContextProvider from "../components/context/cartContext";
+import { FormatingCurrency } from "../components/utils/feture";
 const country = require("../components/jsondata/country.json");
 
 export default function Checkout(props) {
@@ -424,7 +425,7 @@ export default function Checkout(props) {
             </div>
             <div className="w-full lg:border-t-none 2xl:w-full border-t md:border-transparent border-zinc-300  lg:w-2/5  pt-10 md:pt-10 pb-20 h-full">
               <div className=" lg:max-w-md px-5 mx-auto flex flex-col gap-5 lg:gap-7 2xl:mr-auto 2xl:ml-[200px]">
-                <div className="flex max-h-[700px] overflow-y-scroll divide-y divide-slate-200 flex-col items-center border-b border-slate-200">
+                <div className="flex max-h-[300px] overflow-y-scroll divide-y divide-slate-200 flex-col items-center border-b border-slate-200">
 
                   {item.map((data, i) => (
                     <div key={i} className="flex py-3 justify-between w-full gap-5">
@@ -438,7 +439,7 @@ export default function Checkout(props) {
 
                         <p className="flex justify-between items-center gap-5">
                           <span>Qty : {data?.quantity}</span>
-                          <span className="text-zinc-800 text-xl ">₹ {data?.price}</span>
+                          <span className="text-zinc-800 text-xl ">₹ {FormatingCurrency(data?.price)}</span>
 
                         </p>
                       </div>
