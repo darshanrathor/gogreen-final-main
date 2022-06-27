@@ -28,7 +28,7 @@ export default function Category() {
 
 				<CategoryItem
 						data={{
-							image: "/imgs/WhatsApp Image 2022-06-10 at 7.28.00 AM.jpeg",
+							image: "/imgs/plant-category.jpeg",
 							name: "Plant Ganesha",
 							desc: "Idols made of red soil used for planting after visarjan",
 							url: "plant-ganesha",
@@ -37,7 +37,7 @@ export default function Category() {
 
 					<CategoryItem
 						data={{
-							image: "/imgs/15.png",
+							image: "/imgs/clay-category.jpeg",
 							name: "Clay Ganesha",
 							desc: "Made of river clay Shadu Mitti (Mati) & non toxic colors",
 							url: "clay-ganesha",
@@ -68,7 +68,7 @@ function CategoryItem({ data }) {
 					<a className="w-full block relative select-none">
 						<Image layout="responsive"
 							objectFit="cover"
-							objectPosition="center" src={data.image} width={300} height={300} className="rounded-md" />
+							objectPosition="center" src={data.image} width={300} height={340} className="rounded-md" />
 					</a>
 				</Link>
 

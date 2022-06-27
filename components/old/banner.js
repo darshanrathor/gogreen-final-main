@@ -16,7 +16,7 @@ export default function Baner() {
 						interval={3000}
 					>
 						<div>
-							<Image layout="responsive" src="/imgs/banner01.jpg" alt="banner2" width={2030} height={700} />
+							<Image layout="responsive" src="/imgs/banner1.jpg" alt="banner2" width={2030} height={700} />
 						</div>
 
 						<div>
