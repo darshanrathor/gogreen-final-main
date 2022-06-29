@@ -60,6 +60,10 @@ export default function Footer() {
 									<a className=" hover:text-zinc-400 duration-200 ease-in">Terms and Condition</a>
 								</Link>
 
+								<Link href="/privacy">
+									<a className=" hover:text-zinc-400 duration-200 ease-in">Privacy Policy </a>
+								</Link>
+
 
 							</div>
 						</div>
@@ -132,7 +136,9 @@ export default function Footer() {
 			</div>
 			<div className="border-t border-green-800 py-8 justify-around flex items-center  text-sm">
 				<p className=" text-zinc-300">© Copyright 2022 Ganesha. All rights reserved.</p>
+				
 			</div>
+			
 		</div>
 	);
 }
