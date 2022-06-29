@@ -68,6 +68,7 @@ export default function Navbar() {
             <Navlink text="clay ganesha" link="/clay-ganesha" />
             <Navlink text="paper ganesha" link="/paper-ganesha" />
             <Navlink text="plant ganesha" link="/plant-ganesha" />
+            <Navlink text="conatct us" link="/contact" />
           </div>
           <div className="flex   items-center">
             <div className="flex  text-white items-center">

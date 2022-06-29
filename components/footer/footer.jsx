@@ -20,7 +20,7 @@ export default function Footer() {
 						<h3 className="font-semibold uppercase  text-lg text-[#A2F578] mb-2">
 							Contact Info
 						</h3>
-						<p className="text-zinc-300 "> Kandivali - (W) , Mumbai</p>
+						<p className="text-zinc-300 ">   No 3 ,Patel Bhaugh ,Marve Road ,Malad West , Mumbai -400064 .</p>
 						<code className="text-sm text-zinc-300">+91 8169882692 / 9137606816</code>
 						<p className="text-zinc-300 ">gogreenganeshaa@gamil.com</p>
 						<p className="text-zinc-300 ">Instragram ID : <span> @gogreenganesha </span></p>
@@ -45,14 +45,19 @@ export default function Footer() {
 								<Link href="/plant-ganesha">
 									<a className=" hover:text-zinc-400 duration-200 ease-in ">Plant Ganesha</a>
 								</Link>
-								<Link href="/login">
-									<a className=" hover:text-zinc-400 duration-200 ease-in">Login</a>
-								</Link>
+								
 								<Link href="/faq">
 									<a className=" hover:text-zinc-400 duration-200 ease-in">FAQ's</a>
 								</Link>
+								<Link href="/contact">
+									<a className=" hover:text-zinc-400 duration-200 ease-in">Contact</a>
+								</Link>
 								<Link href="/about">
 									<a className=" hover:text-zinc-400 duration-200 ease-in">About</a>
+								</Link>
+
+								<Link href="/terms">
+									<a className=" hover:text-zinc-400 duration-200 ease-in">Terms and Condition</a>
 								</Link>
 
 

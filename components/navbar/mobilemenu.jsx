@@ -21,6 +21,7 @@ export default function Mobilemenu({ transition, passclose }) {
                     <Navlink onclick={passclose} text="Paper ganesha" link="/paper-ganesha" />
                     <Navlink onclick={passclose} text="Plant ganesha" link="/plant-ganesha" />
                     <Navlink onclick={passclose} text="Cart" link="/cart" />
+					<Navlink onclick={passclose} text="contact us" link="/contact" />
                     
                     <Navlink onclick={passclose} text="Login / signup" link="/login" />
                 </div>

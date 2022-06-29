@@ -198,7 +198,7 @@ className=" "
                     Address
                   </h5>
                   <p className="mt-1 max-w-xs ml-10 group-hover:text-white md:text-lg">
-                   Kandivali - (W) , Mumbai
+                   No 3 ,Patel Bhaugh ,Marve Road , Malad West , Mumbai -400064 .
                   </p>
                 </div>
 
