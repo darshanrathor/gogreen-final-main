@@ -10,7 +10,7 @@ class MyDocument extends Document {
                     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
                         rel="stylesheet" />
 
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTKRHSZYN1"></script>
+                    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-JTKRHSZYN1"></script>
                     <script defer dangerouslySetInnerHTML={{
                         __html:
                             `window.dataLayer = window.dataLayer || [];
