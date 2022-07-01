@@ -9,7 +9,21 @@ class MyDocument extends Document {
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
                     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
                         rel="stylesheet" />
-                    <script
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTKRHSZYN1"></script>
+                    <script defer dangerouslySetInnerHTML={{
+                        __html:
+                            `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JTKRHSZYN1')`
+                    }}
+
+                    >
+                    </script>
+
+                    {/* <script
                         defer
                         dangerouslySetInnerHTML={{
                             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +32,7 @@ class MyDocument extends Document {
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NVNSL65');`,
                         }}
-                    />
+                    /> */}
                 </Head>
                 <body>
                     <Main />
