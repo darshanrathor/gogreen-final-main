@@ -22,7 +22,7 @@ export default function Footer() {
 						</h3>
 						<p className="text-zinc-300 ">   No 3 ,Patel Bhaugh ,Marve Road ,Malad West , Mumbai -400064 .</p>
 						<code className="text-sm text-zinc-300">+91 8169882692 / 9137606816</code>
-						<p className="text-zinc-300 ">gogreenganeshaa@gamil.com</p>
+						<p className="text-zinc-300 ">gogreenganeshaa@gmail.com</p>
 						<p className="text-zinc-300 ">Instragram ID : <span> @gogreenganesha </span></p>
 					</div>
 
