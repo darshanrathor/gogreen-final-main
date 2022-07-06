@@ -8,11 +8,10 @@ export default function Baner() {
 			<div className="w-full mt-20">
 				<div className="relative">
 					<Carousel
+						showThumbs={false}
 						autoPlay
 						infiniteLoop
 						showStatus={false}
-						showIndicators={false}
-						showThumbs={false}
 						interval={3000}
 					>
 						<div>
