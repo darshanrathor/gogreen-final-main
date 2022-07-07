@@ -11,7 +11,7 @@ import { supabase } from "../../components/supabase/supabase";
 import { color, ProductBackground } from "../../components/utils/feture";
 
 export default function ClayGanesha() {
-  const [loader, setloader] = useState(false);
+  const [loader, setloader] = useState(true);
   const [product, setproducts] = useState([]);
   const [allproducts, setallproducts] = useState();
 
@@ -25,9 +25,9 @@ export default function ClayGanesha() {
       .from("clay-ganesha")
       .select("*")
     // .order("id", { isActive: true });
-    setloader(false);
     setproducts(data);
     setallproducts(data);
+    setloader(false);
     return data;
   };
 

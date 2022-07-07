@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   }
   const { amount } = JSON.parse(req.body);
 
-  const payment_capture = 1;
+  const payment_capture =1;
   //   const amount = 1;
   const currency = "INR";
   const options = {
