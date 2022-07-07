@@ -14,7 +14,7 @@ export function Toalvalue(){
             const subtotal =  "₹" + query ;
             const total =  ("₹"+ (query < 1000 ? parseInt(query) + 0 : query));
         const subtotalformat ="₹" + FormatingCurrency(query) ;
-        const totalformat =  ("₹"+ FormatingCurrency((query < 1000 ? parseInt(query) + 00 : query)));
+        const totalformat =  ("₹"+ FormatingCurrency((query < 1000 ? parseInt(query) +0 : query)));
          const totalvalue =  query < 1000 ? parseInt(query) + 0 : query;
         return {total, subtotal,query,subtotalformat,totalformat,totalvalue};    
 
