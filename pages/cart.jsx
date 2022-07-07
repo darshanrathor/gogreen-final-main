@@ -68,7 +68,7 @@ export default function Cart() {
                                                 <span className="font-semibold text-zinc-800 text-lg">
                                                       {parseInt(Toalvalue().subtotal.split("").slice(1,Toalvalue().subtotal.split("").length).join("")) >= 1000 ?
                                                             "Free" :
-                                                            "+ ₹80"
+                                                            "+ ₹0"
                                                     }
                                                  </span>
                                             </div>

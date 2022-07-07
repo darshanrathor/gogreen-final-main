@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   //   const amount = 1;
   const currency = "INR";
   const options = {
-    amount: amount * 100,
+    amount: amount *100,
     currency,
     receipt: "receipt_order_test",
     payment_capture,
