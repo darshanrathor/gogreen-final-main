@@ -12,10 +12,10 @@ export function Toalvalue(){
 
             let query = data.reduce((total,product) =>  total + product.price * product.quantity,0);
             const subtotal =  "₹" + query ;
-            const total =  ("₹"+ (query < 1000 ? parseInt(query) + 80 : query));
+            const total =  ("₹"+ (query < 1000 ? parseInt(query) + 0 : query));
         const subtotalformat ="₹" + FormatingCurrency(query) ;
-        const totalformat =  ("₹"+ FormatingCurrency((query < 1000 ? parseInt(query) + 80 : query)));
-         const totalvalue =  query < 1000 ? parseInt(query) + 80 : query;
+        const totalformat =  ("₹"+ FormatingCurrency((query < 1000 ? parseInt(query) + 00 : query)));
+         const totalvalue =  query < 1000 ? parseInt(query) + 0 : query;
         return {total, subtotal,query,subtotalformat,totalformat,totalvalue};    
 
     }
