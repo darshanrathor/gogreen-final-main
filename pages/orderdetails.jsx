@@ -11,11 +11,7 @@ function orderdetails() {
             <Link href="/clay-ganesha"><a className='text-green-600 hover:text-green-500 border-b-[2px] border-green-500'>Browse Products</a></Link>{" "} No order has been made yet.
           </h3>
         </div>
-
-
-
-      </section >
-
+      </section>
     </div >
 
   )

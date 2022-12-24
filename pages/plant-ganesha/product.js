@@ -99,11 +99,11 @@ export default function PlantGaneshaSlug() {
   return (
     <>
 
-<div className="bg-green-300/70 py-2.5 mt-[85px]  text-center center px-3">
+{/* <div className="bg-green-300/70 py-2.5 mt-[85px]  text-center center px-3">
 
 Note : Booking are closed for 2022 
 
-</div>
+</div> */}
       {product ?
         <>
           <Popupcart

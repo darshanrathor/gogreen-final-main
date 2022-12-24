@@ -17,30 +17,39 @@ export default function Navbar() {
 
   const data = getLocalstorage("user");
 
-
   useEffect(() => {
     setcartitem(itemCount);
   }, [itemCount]);
-
 
   useEffect(() => {
     setuser(data);
   }, []);
 
-
   const handleclose = () => {
-    setdisplaymenu(prev => !prev);
-  }
+    setdisplaymenu((prev) => !prev);
+  };
 
   const logout = (name) => {
     Cookies.remove("user");
-    router.reload();
-  }
+    router.push("/");
+  };
+
+  const handler = () => {
+    const list = window.matchMedia("(max-width: 768px)");
+    let hideMobile = list.matches && displaymenu ? true : false;
+    setdisplaymenu(hideMobile);
+  };
+  useEffect(() => {
+    handler(); // invoke once when mounting
+    window.addEventListener("resize", handler);
+
+    return () => {
+      window.removeEventListener("resize", handler);
+    };
+  }, [displaymenu]);
 
   return (
     <>
-
-
       <DynamicMobile
         transition={
           displaymenu
@@ -55,14 +64,34 @@ export default function Navbar() {
       >
         <div className="flex w-full  items-center gap-10 justify-between max-w-7xl mx-auto px-5 ">
           <div className="flex items-center gap-2">
-            <button onClick={handleclose} className="text-white md:hidden block">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <button
+              onClick={handleclose}
+              className="text-white md:hidden block"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
             <Link href="/">
               <a className="w-[130px]">
-                <Image priority={true} width={100} height={50} layout="responsive" src="/imgs/white.png" />
+                <Image
+                  priority={true}
+                  width={100}
+                  height={50}
+                  layout="responsive"
+                  src="/imgs/white.png"
+                />
               </a>
             </Link>
           </div>
@@ -75,7 +104,7 @@ export default function Navbar() {
           </div>
           <div className="flex   items-center">
             <div className="flex  text-white items-center">
-              {user !== null ?
+              {user !== null ? (
                 <div>
                   <div className="relative group py-2 cursor-default">
                     <h6 className="text-white cursor-pointer flex flex-col gap-1 leading-[1.1]">
@@ -83,7 +112,7 @@ export default function Navbar() {
                     </h6>
                     <div className="group-hover:opacity-100 divide-y divide-slate-200 shadow-xl border-[3px] border-green-700  invisible    rounded-md  w-[200px]  bg-white cursor-pointer group-hover:visible transition-all duration-150 ease-in opacity-0 absolute top-[110%] right-0 ">
                       <button
-                        onClick={() => router.push("/userProfile/callHistory")}
+                        onClick={() => router.push("/orderdetails")}
                         className=" py-4 hover:bg-[#E6FCE0] w-full font-semibold text-[15px] text-zinc-800 "
                       >
                         Order History
@@ -97,10 +126,9 @@ export default function Navbar() {
                     </div>
                   </div>
                 </div>
-
-                :
+              ) : (
                 <>
-                  <Link href="/login">
+                  {/* <Link href="/login">
                     <a className="text-white hover:text-zinc-300 md:text-lg">
                       Login
                     </a>
@@ -110,18 +138,21 @@ export default function Navbar() {
                     <a className="text-white hover:text-zinc-300 md:text-lg">
                       Signup
                     </a>
-                  </Link>
+                  </Link> */}
                 </>
-              }
+              )}
             </div>
-            <button className="text-white relative flex gap-1 items-center px-2 sm:px-6 mr-5 hover:text-zinc-300" onClick={() => router.push("/cart")}>
-              {cartitem > 0 &&
+            <button
+              className="text-white relative flex gap-1 items-center px-2 sm:px-6 mr-5 hover:text-zinc-300"
+              onClick={() => router.push("/cart")}
+            >
+              {cartitem > 0 && (
                 <div
                   className={`font-semibold sm:hidden  absolute bg-white text-zinc-800 p-[2px] h-[18px] flex justify-center items-center w-[18px] rounded-full top-[-7px] right-[-2px] text-[13px]`}
                 >
                   {cartitem > 0 ? cartitem : ""}
                 </div>
-              }
+              )}
               <svg
                 className="w-6  stroke-current h-6"
                 viewBox="0 0 18 18"
@@ -147,9 +178,7 @@ export default function Navbar() {
                   strokeLinejoin="round"
                 ></path>
               </svg>
-              <span
-                className={`font-semibold sm:block hidden text-[17px]`}
-              >
+              <span className={`font-semibold sm:block hidden text-[17px]`}>
                 {cartitem > 0 ? "(" + cartitem + ")" : ""}
               </span>
             </button>
@@ -160,17 +189,12 @@ export default function Navbar() {
   );
 }
 
-
-
-
 const Navlink = ({ text, link }) => {
   return (
-
-    
     <Link href={link}>
       <a className="capitalize hover:text-zinc-300   py-2.5 text-white font-semibold md:text-xl duration-100 ease-in">
         {text}
       </a>
     </Link>
-  )
-} 
+  );
+};

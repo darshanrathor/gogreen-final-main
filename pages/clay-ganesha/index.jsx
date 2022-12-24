@@ -15,22 +15,18 @@ export default function ClayGanesha() {
   const [product, setproducts] = useState([]);
   const [allproducts, setallproducts] = useState();
 
-
   useEffect(() => {
     fetchAstrologer();
   }, []);
 
   const fetchAstrologer = async () => {
-    const { data, error } = await supabase
-      .from("clay-ganesha")
-      .select("*")
+    const { data, error } = await supabase.from("clay-ganesha").select("*");
     // .order("id", { isActive: true });
     setproducts(data);
     setallproducts(data);
     setloader(false);
     return data;
   };
-
 
   const handlefilter = (e, o) => {
     // console.log(e.length === 0 && o !== "latest")
@@ -49,7 +45,7 @@ export default function ClayGanesha() {
     // }
     else {
       const arr = allproducts.filter((item, i) => {
-        return e.indexOf(item?.inch) > -1
+        return e.indexOf(item?.inch) > -1;
       });
       // if (o === "high") {
       //   arr.sort((a, b) => parseInt(b?.price) - parseInt(a?.price));
@@ -63,11 +59,7 @@ export default function ClayGanesha() {
       setproducts(arr);
       // }
     }
-
-  }
-
-
-
+  };
 
   return (
     <div className="pb-24">
@@ -79,17 +71,21 @@ export default function ClayGanesha() {
             </Heading>
             <Paragraph extra="max-w-2xl mx-auto">
               Clay idol made of clay which is river mud comes in grey color.
-              Easily dissolves in water and can be used in plants to certain extent.
-              The colors used over the idols are also not harmful in nature.
-              {" "}
+              Easily dissolves in water and can be used in plants to certain
+              extent. The colors used over the idols are also not harmful in
+              nature.{" "}
             </Paragraph>
           </div>
         </div>
       </div>
 
-      
+      {/* <div className="bg-green-300/70 py-2.5 text-center center px-3">
+        Note : Booking are closed for 2022
+      </div> */}
       <AnimatedMulti passheight={handlefilter} />
-      {loader ? <Loader2 /> :
+      {loader ? (
+        <Loader2 />
+      ) : (
         <div className="px-5 mt-10 md:mt-4 w-full max-w-7xl mx-auto md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:grid-cols-4 grid ">
           <Trail open={true}>
             {product.map((item, i) => (
@@ -106,7 +102,7 @@ export default function ClayGanesha() {
             ))}
           </Trail>
         </div>
-      }
+      )}
     </div>
   );
 }

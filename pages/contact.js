@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-
-
 import Image from "next/image";
 export default function Contact() {
   const initialvalue = {
@@ -54,31 +52,14 @@ export default function Contact() {
 
   return (
     <>
+      <div className="mt-[100px] lg:hidden ">
+        <Image src="/try/group.jpg" width={1200} height={600} className=" " />
+      </div>
 
-
-<div className="mt-[100px] lg:hidden ">
-
-
-<Image
-
-src="/try/group.jpg"
-width={1200}
-height={600}
-className=" "
-
-/>
-
-</div>
-
-
-
-
-
-     
       <div className="  ">
         <div className="    mt-0  ">
           <h4 className="max-w-7xl px-5 mx-auto md:text-4xl text-white font-cera_medium text-3xl">
-            Contact US 
+            Contact US
           </h4>
         </div>
         <div className="md:px-0 md:pt-16 pb-24">
@@ -86,85 +67,55 @@ className=" "
             <div className="flex px-10 md:flex-row  flex-col mb-12 divide-zinc-300  md:divide-x gap-x-16 max-w-4xl mx-auto items-start md:items-center">
               <div className="md:max-w-xs w-full">
                 <span>#Contact</span>
-                <h2 className="mt-2 font-bold text-2xl">Get in touch with us</h2>
+                <h2 className="mt-2 font-bold text-2xl">
+                  Get in touch with us
+                </h2>
               </div>
               <p className=" w-full md:pl-14 py-3 text-lg leading-7">
-                Let us know what you want to know. Our representatives are here to help you  
+                Let us know what you want to know. Our representatives are here
+                to help you
               </p>
             </div>
             <div className="flex gap-10 md:gap-40 px-5 md:flex-row flex-col ">
-              <div className="bg-indigo-200 mt-10   p-5 md:p-3 max-w-lg w-full mx-auto rounded-[20px] shadow-lg">
+              <div className="mt-10   p-5 md:p-3 max-w-lg w-full mx-auto rounded-[20px] shadow-xl border border-green-500/50">
                 <form
                   onSubmit={handleForm}
-                  className="flex rounded-xl flex-col md:bg-indigo-200  w-full gap-10 md:py-8 md:px-7"
+                  className="flex rounded-xl flex-col  w-full gap-10 md:py-8 md:px-7"
                 >
                   <h4 className="font-cera_bold text-zinc-800 ">
                     Ready to Get Started?
                   </h4>
                   <div className="w-full relative   flex  gap-3 ">
-                  <label
-                      htmlFor="name"
-                      className="whitespace-nowrap max-w-[200px] text-center items-center justify-center mt-3 labelt dark:text-zinc-800 text-base"
-                    >
-                      Enter Your Name:
-                    </label>
                     <input
                       type="text"
                       value={formValue.name}
                       onChange={handleInput}
                       id="name"
                       name="name"
-                      className={`w-full min-w-[200px] bg-zinc-100  items-center justify-center  text-zinc-800  border-lg ${
-                        formError.name && formValue.name === ""
-                          ? "border-green-500"
-                          : "border-gren-800"
-                      } focus:border-green-700  pt-3 pb-2   `}
-                      placeholder=" "
+                      className={`w-full min-w-[200px]  items-center justify-center  text-zinc-800  border border-zinc-400  rounded focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none pt-3 pb-2 px-3  `}
+                      placeholder="Enter your name"
                     />
-                    
                   </div>
                   <div className="w-full flex relative  gap-3  ">
-                  <label
-                      htmlFor="email"
-                      className="whitespace-nowrap max-w-[200px] mt-3 labelt dark:text-zinc-800 text-base"
-                    >
-                      Email Address:
-                    </label>
                     <input
                       type="text"
                       value={formValue.email}
                       onChange={handleInput}
                       id="email"
                       name="email"
-                      className={`w-full min-w-[200px]  items-center justify-center  text-zinc-800  border-lg ${
-                        formError.name && formValue.name === ""
-                          ? "border-green-500"
-                          : "border-green-500"
-                      } focus:border-green-700 pt-3 pb-2   `}
-                      placeholder=" "
+                      className={`w-full min-w-[200px]  items-center justify-center  text-zinc-800  border border-zinc-400  rounded focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none pt-3 pb-2 px-3  `}
+                      placeholder="Enter your email"
                     />
-                   
                   </div>
                   <div className="w-full min-w-[200px] flex relative  gap-3  ">
-                  <label
-                      htmlFor="message"
-                      className="whitespace-nowrap max-w-[200px] labelt dark:text-zinc-800 text-base"
-                    >
-                      Message:
-                    </label>
                     <textarea
                       value={formValue.message}
                       onChange={handleInput}
                       id="message"
                       name="message"
-                      className={`w-full min-w-[200px]  items-center justify-center  h-[120px] st text-zinc-800 border-lg ${
-                        formError.name && formValue.name === ""
-                          ? "border-green-500"
-                          : "border-greenc-500"
-                      } focus:border-green-700  outline-none  pt-3 pb-2    `}
-                      placeholder=" "
+                      className={`w-full min-w-[200px] h-[100px] items-center justify-center  text-zinc-800  border border-zinc-400  rounded focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none pt-3 pb-2 px-3  `}
+                      placeholder="Enter your message"
                     />
-                   
                   </div>
                   {error !== null && (
                     <span className="py-2 px-6 text-red-500 border-red-500 font-semibold border-l-4 bg-red-50">
@@ -198,7 +149,8 @@ className=" "
                     Address
                   </h5>
                   <p className="mt-1 max-w-xs ml-10 group-hover:text-white md:text-lg">
-                   No 3 ,Patel Bhaugh ,Marve Road , Malad West , Mumbai -400064 .
+                    No 3 ,Patel Bhaugh ,Marve Road , Malad West , Mumbai -400064
+                    .
                   </p>
                 </div>
 
@@ -222,7 +174,7 @@ className=" "
                     href="mailto:gogreenganeshaa@gmail.com"
                     className="mt-1 ml-10 group-hover:text-white md:text-lg"
                   >
-                   gogreenganeshaa@gmail.com
+                    gogreenganeshaa@gmail.com
                   </a>
                 </div>
 
@@ -245,16 +197,7 @@ className=" "
                   <p className="mt-1 ml-10 group-hover:text-white md:text-lg">
                     Mobile: +91 8169882692
                   </p>
-
-
-
-                
-
                 </div>
-
-                 
-
-
 
                 <div className="flex w-full flex-col gap-5">
                   <h6>Follow Us</h6>
@@ -289,20 +232,17 @@ className=" "
                       </svg>
                     </a>
 
-
                     <a
                       href="https://www.instagram.com/gogreenganesha/"
                       className="p-3 group hover:bg-red-200 bg-red-600 rounded-mdhover:bg-red-200 bg-red-600 rounded-md"
                     >
-<Image
-											src="/imgs/insta.svg"
-											width={25}
-											height={25}
-											className="cursor-pointer items-center text-center justify-center "
-										></Image>
-
-
-                      </a>
+                      <Image
+                        src="/imgs/insta.svg"
+                        width={25}
+                        height={25}
+                        className="cursor-pointer items-center text-center justify-center "
+                      ></Image>
+                    </a>
                     <a
                       href="https://wa.me/918169882692"
                       className=" p-3 group hover:bg-green-200 bg-green-600 rounded-md"
@@ -332,10 +272,6 @@ className=" "
           </div>
         </div>
       </div>
-
-
-
-
     </>
   );
 }
