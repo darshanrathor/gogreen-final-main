@@ -10,6 +10,8 @@ import displayRazorpay from "../components/paymentbutton/razorpay";
 import CartContextProvider from "../components/context/cartContext";
 import { FormatingCurrency } from "../components/utils/feture";
 
+
+
 export default function Checkout(props) {
   const initialvalue = {
     firstname: "",
