@@ -46,10 +46,10 @@ export default function Family() {
 								interval={2000}
 							>
 								<div className="h-[300px] w-full">
-									<Image src="/imgs/1.png" alt="family" objectFit="fill" layout="fill" />
+									<Image src="/imgs/1.jpeg" alt="family" objectFit="fill" layout="fill" />
 								</div>
 									<div className="h-[300px] w-full">
-									<Image src="/imgs/2.png" alt="family" objectFit="fill" layout="fill" />
+									<Image src="/imgs/2.jpeg" alt="family" objectFit="fill" layout="fill" />
 								</div>
 								<div className="h-[250px] w-full">
 									<Image src="/imgs/10.png" alt="family" objectFit="fill" layout="fill" />
@@ -58,7 +58,7 @@ export default function Family() {
 									<Image src="/imgs/20.png" alt="family" objectFit="fill" layout="fill" />
 								</div>
 								<div className="h-[300px] w-full">
-									<Image src="/imgs/4.png" alt="family" objectFit="fill" layout="fill" />
+									<Image src="/imgs/4.jpeg" alt="family" objectFit="fill" layout="fill" />
 								</div>
 								<div className="h-[300px] w-full">
 									<Image src="/imgs/5.png" alt="family" objectFit="fill" layout="fill" />
