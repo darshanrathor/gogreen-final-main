@@ -38,9 +38,9 @@ export default function Footer() {
 									</a>
 								</Link>
 
-								<Link href="/paper-ganesha">
+								{/*<Link href="/paper-ganesha">
 									<a className=" hover:text-zinc-400 duration-200 ease-in">Paper Ganesha</a>
-								</Link>
+	</Link>*/}
 
 								<Link href="/plant-ganesha">
 									<a className=" hover:text-zinc-400 duration-200 ease-in ">Plant Ganesha</a>
