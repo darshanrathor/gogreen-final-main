@@ -9,6 +9,7 @@ import { supabase } from "../components/supabase/supabase";
 import displayRazorpay from "../components/paymentbutton/razorpay";
 import CartContextProvider from "../components/context/cartContext";
 import { FormatingCurrency } from "../components/utils/feture";
+import {POSTALCODE} from "../components/utils/postalcode";
 
 
 
@@ -93,7 +94,10 @@ export default function Checkout(props) {
       setFormErrors(validate(inputvalue));
       seterror("All detailed must be filled");
     }
-    if (Object.keys(validate(inputvalue)).length === 0) {
+    else if(!POSTALCODE.includes(parseInt(inputvalue.user_zipcode))){
+      seterror("Please note currently we deliver Idols only in Mumbai , Please selcet proper postal code ");
+    }
+    else if (Object.keys(validate(inputvalue)).length === 0) {
       setloader2(true);
       await updatedatabase();
       await displayRazorpay(
