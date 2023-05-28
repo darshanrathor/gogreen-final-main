@@ -10,6 +10,7 @@ import Popupcart from "../../components/product/popupcart";
 import ClayRandom from "../../components/randomProduct/clay-random";
 import { supabase } from "../../components/supabase/supabase";
 import { FormatingCurrency } from "../../components/utils/feture";
+import DemoCarousel from "../../components/carousel/reactResponsiveCarousel";
 
 export default function PapperGaneshaSlug() {
   const [qty, setqty] = useState({ qty: 1 });
