@@ -26,7 +26,7 @@ export default function AboutEco() {
 				<div className="flex w-full  justify-center items-center">
 
 					<div className='flex flex-col text-center justify-center items-center'>
-						<h2 className="md:text-4xl text-3xl w-full font-display font-semibold text-zinc-800 tracking-wider md:text-4xl ">
+						<h2 className="text-3xl w-full font-display font-playfair text-zinc-800 tracking-wider md:text-4xl ">
 							Eco Friendly Ganesha
 						</h2>
 						<div className='flex flex-row-1 text-center justify-center items-center mt-3'>
@@ -73,7 +73,7 @@ export default function AboutEco() {
 							className="flex h-full flex-col gap-y-4 font-body my-8 md:mx-4 "
 						>
 							<h2
-								className="md:text-2xl text-xl font-bold font-display tracking-wider"
+								className="md:text-2xl text-3xl font-playfair tracking-wider"
 
 							>
 								WHAT MAKES US UNIQUE ?

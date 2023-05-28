@@ -10,7 +10,7 @@ export default function Family() {
 
 				<div className="text-center w-full items-center justify-start ">
 					<div className='flex flex-col gap-2 text-center justify-start items-center'>
-						<h2 className="md:text-4xl text-3xl  font-heading uppercase font-bold text-zinc-800 ">Our  Happy
+						<h2 className="md:text-4xl text-3xl font-playfair uppercase  text-zinc-800 ">Our  Happy
 							<br />
 							Gogreen Family
 						</h2>

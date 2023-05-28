@@ -1,3 +1,5 @@
+
+
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -10,6 +12,7 @@ module.exports = {
       fontFamily: {
         sans: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
         serif: ["Source Sans Pro", ...defaultTheme.fontFamily.serif],
+        playfair : ['Playfair', "serif"],
       },
     },
   },

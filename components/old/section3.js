@@ -9,7 +9,7 @@ export default function Sectionthird() {
 				<div className="w-full flex flex-col flex-grow items-center text-center justify-center my-6">
 
 					<div className='flex flex-col text-center justify-center items-center'>
-					<h2 className="md:text-4xl text-3xl w-full flex-grow font-heading font-semibold text-zinc-800 tracking-wider md:text-3xl ">
+					<h2 className="md:text-4xl text-3xl w-full flex-grow font-playfair  text-zinc-800 tracking-wider md:text-3xl ">
 							WHY TO CHOOSE  GOGREENGANESHA 
 						</h2>
         <div className='flex flex-row-1 text-center justify-center items-center mt-3'>

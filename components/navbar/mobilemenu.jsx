@@ -58,7 +58,10 @@ export default function Mobilemenu({ transition, passclose }) {
               Follow us on :
             </h6>
             <div className="flex mt-4 items-center justify-start gap-x-5 w-full">
-              <Link href="https://api.whatsapp.com/send?phone=918169882692">
+              <Link
+                legacyBehavior
+                href="https://api.whatsapp.com/send?phone=918169882692"
+              >
                 <a className="">
                   <div className="bg-white group hover:bg-green-500 rounded-full w-10 h-10 flex justify-center items-center   duration-200">
                     <svg
@@ -81,7 +84,10 @@ export default function Mobilemenu({ transition, passclose }) {
                   </div>
                 </a>
               </Link>
-              <Link href="https://www.instagram.com/gogreenganesha/">
+              <Link
+                legacyBehavior
+                href="https://www.instagram.com/gogreenganesha/"
+              >
                 <a className="">
                   <div className=" group hover:bg-rose-500 bg-white rounded-full w-10 h-10 flex justify-center items-center  duration-200">
                     <svg
@@ -94,6 +100,7 @@ export default function Mobilemenu({ transition, passclose }) {
                 </a>
               </Link>
               <Link
+                legacyBehavior
                 href="https://www.facebook.com/profile.php?id=100024018794238"
                 target="_blank"
               >
@@ -121,7 +128,7 @@ export default function Mobilemenu({ transition, passclose }) {
 
 const Navlink = ({ text, link, onclick }) => {
   return (
-    <Link href={link}>
+    <Link legacyBehavior href={link}>
       <a
         onClick={onclick}
         className="capitalize  hover:text-[#E6FCE0] py-3.5 text-zinc-200 font-semibold text-2xl duration-100 ease-in"

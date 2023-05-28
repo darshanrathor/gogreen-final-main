@@ -28,7 +28,7 @@ export default function Contact() {
       (formValue.name !== "" && formValue.message !== "") ||
       formValue.email !== ""
     ) {
-      fetch(
+       fetch(
         "https://5yab4wx3hj.execute-api.ap-south-1.amazonaws.com/default/e-educationContact",
         {
           method: "post",
@@ -149,8 +149,8 @@ export default function Contact() {
                     Address
                   </h5>
                   <p className="mt-1 max-w-xs ml-10 group-hover:text-white md:text-lg">
-                    No 3 ,Patel Bhaugh ,Marve Road , Malad West , Mumbai -400064
-                    .
+                    Near Atul Tower, Mathuradas Road ext, Kandivali West,
+                    Mumbai-400067 .
                   </p>
                 </div>
 

@@ -5,7 +5,7 @@ export  function FaqSection(props){
  
   return(
         <button className={`border-b-2 cursor-default border-zinc-400 w-full py-5 flex flex-col gap-5`}  >
-            <h5 onClick={()=> props.onclick(props.title)} className="flex pr-2 text-left duration-100 ease-linear hover:text-[#0d733a] sm:text-xl lg:text-xl text-[15px] text-zinc-800  cursor-pointer justify-between w-full">
+            <h5 onClick={()=> props.onclick(props.title)} className="flex p-2 text-left font-playfair duration-100 ease-linear hover:text-[#0d733a] sm:text-xl lg:text-xl text-[20px] text-zinc-800  cursor-pointer justify-between w-full">
                 {props.title}
                 <span>
                     <svg  viewBox="0 0 16 16" className={`${props.active === props.title ? "transform fill-azure-500 rotate-180 transition linear duration-200" : ""} w-5 fill-zinc-800 h-5`}
@@ -21,7 +21,7 @@ export  function FaqSection(props){
                     props.desc.map((item, i) => (
                         <p key={i}
                            dangerouslySetInnerHTML={{__html: item}}
-                           className={`w-full text-zinc-600 text-left  font-body leading-7 text-[15px] md:text-lg `}>
+                           className={`w-full text-zinc-600 text-left  font-body leading-7 text-[18px] md:text-lg `}>
                         </p>
                     ))
                 }

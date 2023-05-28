@@ -14,7 +14,7 @@ const Index = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countDownDate = new Date('jan 25 , 2023 00:00:00').getTime();
+    const countDownDate = new Date('SEP 19 , 2023 00:00:00').getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();

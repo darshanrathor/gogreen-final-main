@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5ec06e61-fc28-40b1-9a86-2421d53f3f42" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="7ca3a1be-9a6a-4db8-9eff-53451e9c5e6d" />
+  </component>
+  <component name="ProjectId" id="2Ld806nRjTC82oHBYJfvssI0tSr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5ec06e61-fc28-40b1-9a86-2421d53f3f42" name="Default Changelist" comment="" />
+      <created>1676189372881</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676189372881</updated>
+      <workItem from="1676189374896" duration="162000" />
+      <workItem from="1676190434645" duration="1000" />
+      <workItem from="1676190560340" duration="754000" />
+    </task>
+    <task id="LOCAL-00001" summary="postal code change">
+      <created>1676191038376</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676191038376</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="postal code change" />
+    <option name="LAST_COMMIT_MESSAGE" value="postal code change" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="532" y="325" key="Github.Dialog.Accounts.Choose" timestamp="1676191047122">
+      <screen x="0" y="25" width="1440" height="790" />
+    </state>
+    <state x="532" y="325" key="Github.Dialog.Accounts.Choose/0.25.1440.790@0.25.1440.790" timestamp="1676191047122" />
+    <state x="0" y="25" width="1440" height="790" key="MultipleFileMergeDialog" timestamp="1676189465361">
+      <screen x="0" y="25" width="1440" height="790" />
+    </state>
+    <state x="0" y="25" width="1440" height="790" key="MultipleFileMergeDialog/0.25.1440.790@0.25.1440.790" timestamp="1676189465361" />
+    <state x="386" y="144" key="RollbackChangesDialog" timestamp="1676190669847">
+      <screen x="0" y="25" width="1440" height="790" />
+    </state>
+    <state x="386" y="144" key="RollbackChangesDialog/0.25.1440.790@0.25.1440.790" timestamp="1676190669847" />
+    <state x="320" y="157" key="Vcs.Push.Dialog.v2" timestamp="1676191040053">
+      <screen x="0" y="25" width="1440" height="790" />
+    </state>
+    <state x="320" y="157" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1676191040053" />
+    <state x="479" y="337" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1676190796368">
+      <screen x="0" y="25" width="1440" height="790" />
+    </state>
+    <state x="479" y="337" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1440.790@0.25.1440.790" timestamp="1676190796368" />
+    <state x="375" y="211" key="git4idea.merge.GitMergeDialog" timestamp="1676190791560">
+      <screen x="0" y="25" width="1440" height="790" />
+    </state>
+    <state x="375" y="211" key="git4idea.merge.GitMergeDialog/0.25.1440.790@0.25.1440.790" timestamp="1676190791560" />
+  </component>
+</project>

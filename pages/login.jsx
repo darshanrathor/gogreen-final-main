@@ -55,18 +55,20 @@ export default function Login() {
   };
   return (
     <>
-
       <div className="flex-col lg:w-full   lg:flex-row lg:flex  w-full     ">
-        <div
-          className=" py-32 bg-[url('/try/xyz.jpg')]  bg-opacity-50 lg:w-full"
-        >
+        <div className=" py-32 bg-[url('/try/xyz.jpg')]  bg-opacity-50 lg:w-full">
           {/*login form*/}
           <div className=" flex lg:w-full justify-center items-center sm:p-0 px-5">
-            <form onSubmit={handleSubmit} className="bg-white rounded shadow-xl max-w-md p-6 sm:p-10 w-full flex flex-col gap-6">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white rounded shadow-xl max-w-md p-6 sm:p-10 w-full flex flex-col gap-6"
+            >
               <div>
-                <h2 className="mb-2 text-3xl uppercase font-bold text-[#184029] text">Sign in</h2>
+                <h2 className="mb-2 text-3xl uppercase font-bold text-[#184029] text">
+                  Sign in
+                </h2>
               </div>
-            
+
               <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="email" className=" text-zinc-500  text-lg">
@@ -101,7 +103,10 @@ export default function Login() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="password" className="  text-zinc-500  text-lg">
+                  <label
+                    htmlFor="password"
+                    className="  text-zinc-500  text-lg"
+                  >
                     Password
                   </label>
                   <div
@@ -187,7 +192,7 @@ export default function Login() {
               </p> */}
                 <p>
                   Don't have an account yet?{" "}
-                  <Link href="/signup">
+                  <Link legacyBehavior href="/signup">
                     <a className="font-semibold text-blue-500 hover:text-rose-500">
                       Sign up
                     </a>

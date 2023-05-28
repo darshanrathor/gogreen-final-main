@@ -38,7 +38,7 @@ export default function Popupcart({ data, qty, active, passclose }) {
               </svg>
             </button>
           </div>
-          <Link href="/cart">
+          <Link legacyBehavior href="/cart">
             <a className="flex gap-5">
               <div>
                 <img

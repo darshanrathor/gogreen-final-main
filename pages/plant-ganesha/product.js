@@ -98,20 +98,20 @@ export default function PlantGaneshaSlug() {
 
   return (
     <>
-
-{/* <div className="bg-green-300/70 py-2.5 mt-[85px]  text-center center px-3">
+      {/* <div className="bg-green-300/70 py-2.5 mt-[85px]  text-center center px-3">
 
 Note : Booking are closed for 2022 
 
 </div> */}
-      {product ?
+      {product ? (
         <>
           <Popupcart
             qty={qty.qty}
-            transition={`${popup
-              ? "-translate-x-[10px] md:-translate-x-[100px] opacity-100 visible"
-              : "translate-x-[0px] opacity-0 invisible"
-              }`}
+            transition={`${
+              popup
+                ? "-translate-x-[10px] md:-translate-x-[100px] opacity-100 visible"
+                : "translate-x-[0px] opacity-0 invisible"
+            }`}
             data={product}
             passclose={handlecart}
           />
@@ -119,11 +119,11 @@ Note : Booking are closed for 2022
             <div className="min-h-screen overflow-x-hidden">
               <div className="md:pt-10 truncate pt-10">
                 <div className="flex gap-2 items-center text-zinc-500 max-w-7xl px-5 mx-auto">
-                  <Link href="/">
+                  <Link legacyBehavior href="/">
                     <a className="hover:text-green-700 text-zinc-800">Home</a>
                   </Link>
                   /
-                  <Link href="/clay-ganesha">
+                  <Link legacyBehavior href="/clay-ganesha">
                     <a className="hover:text-green-700 text-zinc-800">
                       Clay-ganesha
                     </a>
@@ -142,7 +142,11 @@ Note : Booking are closed for 2022
                           <div
                             key={i}
                             onClick={() => handleiamge(i)}
-                            className={`${images === i ? "border-zinc-800" : "border-zinc-200"} bg-gray-50 flex cursor-pointer rounded-md  border-2   max-w-max`}
+                            className={`${
+                              images === i
+                                ? "border-zinc-800"
+                                : "border-zinc-200"
+                            } bg-gray-50 flex cursor-pointer rounded-md  border-2   max-w-max`}
                           >
                             <Image
                               src={item}
@@ -163,7 +167,9 @@ Note : Booking are closed for 2022
                           height={100}
                           width={100}
                           loading="lazy"
-                          src={product?.imgs[images] ? product?.imgs[images] : ""}
+                          src={
+                            product?.imgs[images] ? product?.imgs[images] : ""
+                          }
                           alt={product?.name}
                           className="rounded"
                         />
@@ -183,7 +189,6 @@ Note : Booking are closed for 2022
                         <div className="relative pb-3 pt-1">
                           <h5 className="md:text-4xl text-3xl font-bold font- text-zinc-900 flex gap-3 items-center">
                             ₹{FormatingCurrency(product?.price)}
-
                           </h5>
                         </div>
                         {/*fetures */}
@@ -191,16 +196,28 @@ Note : Booking are closed for 2022
                         <div>
                           <ul className="flex flex-col gap-2 text-zinc-600">
                             <li className="md:text-xl md:text-lg ">
-                              <b className="font-semibold text-zinc-800">Size</b> : {product?.feature?.size}
+                              <b className="font-semibold text-zinc-800">
+                                Size
+                              </b>{" "}
+                              : {product?.feature?.size}
                             </li>
                             <li className="md:text-xl md:text-lg">
-                              <b className="font-semibold text-zinc-800">Material</b> : {product?.feature?.material}
+                              <b className="font-semibold text-zinc-800">
+                                Material
+                              </b>{" "}
+                              : {product?.feature?.material}
                             </li>
                             <li className="md:text-xl md:text-lg">
-                              <b className="font-semibold text-zinc-800">Finish</b> : {product?.feature?.finish}
+                              <b className="font-semibold text-zinc-800">
+                                Finish
+                              </b>{" "}
+                              : {product?.feature?.finish}
                             </li>
                             <li className="md:text-xl md:text-lg">
-                              <b className="font-semibold text-zinc-800">Features</b> : {product?.feature?.features}
+                              <b className="font-semibold text-zinc-800">
+                                Features
+                              </b>{" "}
+                              : {product?.feature?.features}
                             </li>
                           </ul>
                         </div>
@@ -212,10 +229,11 @@ Note : Booking are closed for 2022
                           <div className="flex py-2 px-2 gap-3 rounded-[10px] max-w-[100px] w-full divide-zinc-200   border border-zinc-300">
                             <button
                               onClick={handledecrease}
-                              className={`${qty.qty === 1
-                                ? "text-zinc-300 cursor-not-allowed"
-                                : ""
-                                } w-full`}
+                              className={`${
+                                qty.qty === 1
+                                  ? "text-zinc-300 cursor-not-allowed"
+                                  : ""
+                              } w-full`}
                               disabled={qty.qty === 1}
                             >
                               <svg
@@ -233,7 +251,9 @@ Note : Booking are closed for 2022
                                 />
                               </svg>
                             </button>
-                            <span className="w-full text-center">{qty.qty}</span>
+                            <span className="w-full text-center">
+                              {qty.qty}
+                            </span>
                             <button onClick={handleincrase} className="w-full">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -306,24 +326,27 @@ Note : Booking are closed for 2022
               {/*mobile description */}
               <div className="sm:hidden px-5 flex flex-col gap-3">
                 <div
-                  className={`${text === "desc"
-                    ? " border-zinc-100 shadow-md shadow-zinc-200/50 "
-                    : "border-transparent"
-                    } border flex flex-col gap-4 rounded-lg `}
+                  className={`${
+                    text === "desc"
+                      ? " border-zinc-100 shadow-md shadow-zinc-200/50 "
+                      : "border-transparent"
+                  } border flex flex-col gap-4 rounded-lg `}
                 >
                   <button
                     onClick={() =>
                       settext((prev) => (prev === "desc" ? "" : "desc"))
                     }
-                    className={`${text === "desc" ? "rounded-t-lg" : " rounded-lg"
-                      } bg-gradient-to-r from-green-50 to-teal-50  p-4  w-full   flex justify-between text-left cursor-pointer font-semibold text-xl md:text-2xl`}
+                    className={`${
+                      text === "desc" ? "rounded-t-lg" : " rounded-lg"
+                    } bg-gradient-to-r from-green-50 to-teal-50  p-4  w-full   flex justify-between text-left cursor-pointer font-semibold text-xl md:text-2xl`}
                   >
                     Description
                     <span className=" block">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className={`${text === "desc" ? "transform rotate-180" : ""
-                          } fill-zinc-800 h-5 w-5 transition duration-100 ease-in`}
+                        className={`${
+                          text === "desc" ? "transform rotate-180" : ""
+                        } fill-zinc-800 h-5 w-5 transition duration-100 ease-in`}
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -349,24 +372,27 @@ Note : Booking are closed for 2022
                   )}
                 </div>
                 <div
-                  className={`${text === "feature"
-                    ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
-                    : "border-transparent rounded-lg"
-                    } border flex flex-col gap-4`}
+                  className={`${
+                    text === "feature"
+                      ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
+                      : "border-transparent rounded-lg"
+                  } border flex flex-col gap-4`}
                 >
                   <button
                     onClick={() =>
                       settext((prev) => (prev === "feature" ? "" : "feature"))
                     }
-                    className={`${text === "desc" ? "rounded-t-lg" : " rounded-lg"
-                      } bg-gradient-to-r from-green-50 to-teal-50  p-4  w-full   flex justify-between text-left cursor-pointer font-semibold text-xl md:text-2xl`}
+                    className={`${
+                      text === "desc" ? "rounded-t-lg" : " rounded-lg"
+                    } bg-gradient-to-r from-green-50 to-teal-50  p-4  w-full   flex justify-between text-left cursor-pointer font-semibold text-xl md:text-2xl`}
                   >
                     Features
                     <span className=" block">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className={`${text === "feature" ? "transform rotate-180" : ""
-                          } fill-zinc-800 h-5 w-5 transition duration-100 ease-in`}
+                        className={`${
+                          text === "feature" ? "transform rotate-180" : ""
+                        } fill-zinc-800 h-5 w-5 transition duration-100 ease-in`}
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -401,26 +427,30 @@ Note : Booking are closed for 2022
                   )}
                 </div>
 
-
                 <div
-                  className={`${text === "specification"
-                    ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
-                    : "border-transparent rounded-lg"
-                    } border flex flex-col gap-4`}
+                  className={`${
+                    text === "specification"
+                      ? " border-zinc-100 rounded-t-lg shadow-md shadow-zinc-200/50 "
+                      : "border-transparent rounded-lg"
+                  } border flex flex-col gap-4`}
                 >
                   <button
                     onClick={() =>
-                      settext((prev) => (prev === "specification" ? "" : "specification"))
+                      settext((prev) =>
+                        prev === "specification" ? "" : "specification"
+                      )
                     }
-                    className={`${text === "desc" ? "rounded-t-lg" : " rounded-lg "
-                      } bg-gradient-to-r from-green-50 to-teal-50  p-4  w-full   flex justify-between text-left cursor-pointer font-semibold text-xl md:text-2xl`}
+                    className={`${
+                      text === "desc" ? "rounded-t-lg" : " rounded-lg "
+                    } bg-gradient-to-r from-green-50 to-teal-50  p-4  w-full   flex justify-between text-left cursor-pointer font-semibold text-xl md:text-2xl`}
                   >
                     Specification
                     <span className=" block">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className={`${text === "desc" ? "transform rotate-180" : ""
-                          } fill-zinc-800 h-5 w-5 transition duration-100 ease-in`}
+                        className={`${
+                          text === "desc" ? "transform rotate-180" : ""
+                        } fill-zinc-800 h-5 w-5 transition duration-100 ease-in`}
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -434,22 +464,35 @@ Note : Booking are closed for 2022
                   </button>
                   {text === "specification" && (
                     <div className=" px-5  pb-5 ">
-                      <h3 className="start py-1  text-lg md:text-xl "> With Gogreen Ganesha </h3>
-                      <p className="start py-3 text-base md:text-xl">Let us celebrate this year Ganesh Chaturthi in an eco-friendly way by welcoming your home a
-                        Murti of Go Green Ganesha. It is basically made up of Red Soil, Organic Fertilizers, Natural Colors and Seeds that will transform Ganesha Murti into a plant.
-                        Just by changing the material used to create the Murti, we managed to change the way people looked at immersions during the festival. To complete the immersion ritual with a Go Green Ganesha Murti,
-                        all we need is a sprinkle of water and the best part is, it can be done in one's own backyard instead of being carried to a waterbody.
-                        This exciting new format instantly touched a chord with people. It not only solves the water pollution issue but also creates a huge environmental impact for water bodies that get polluted every year.
+                      <h3 className="start py-1  text-lg md:text-xl ">
+                        {" "}
+                        With Gogreen Ganesha{" "}
+                      </h3>
+                      <p className="start py-3 text-base md:text-xl">
+                        Let us celebrate this year Ganesh Chaturthi in an
+                        eco-friendly way by welcoming your home a Murti of Go
+                        Green Ganesha. It is basically made up of Red Soil,
+                        Organic Fertilizers, Natural Colors and Seeds that will
+                        transform Ganesha Murti into a plant. Just by changing
+                        the material used to create the Murti, we managed to
+                        change the way people looked at immersions during the
+                        festival. To complete the immersion ritual with a Go
+                        Green Ganesha Murti, all we need is a sprinkle of water
+                        and the best part is, it can be done in one's own
+                        backyard instead of being carried to a waterbody. This
+                        exciting new format instantly touched a chord with
+                        people. It not only solves the water pollution issue but
+                        also creates a huge environmental impact for water
+                        bodies that get polluted every year.
                       </p>
 
-                      <p className="start py-3 text-base md:text-xl " >So, Book your Go Green Ganesha now and contribute a bit to Nature! "</p>
-
+                      <p className="start py-3 text-base md:text-xl ">
+                        So, Book your Go Green Ganesha now and contribute a bit
+                        to Nature! "
+                      </p>
                     </div>
                   )}
-
                 </div>
-
-
 
                 {/*<div
                   className={`${text === "additional"
@@ -495,12 +538,6 @@ Note : Booking are closed for 2022
                   )}
                 </div>
                       */}
-
-
-
-
-
-
               </div>
 
               {/*desktop description*/}
@@ -509,8 +546,9 @@ Note : Booking are closed for 2022
                   <ul className="flex divide-x divide-slate-200  rounded-l bg-white   w-full font-bold font-body">
                     <li
                       className={`py-3.5
-								${text === "desc" ? "bg-slate-50" : ""
-                        } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
+								${
+                  text === "desc" ? "bg-slate-50" : ""
+                } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
                       onClick={() => handleClick("desc")}
                     >
                       Description
@@ -518,8 +556,9 @@ Note : Booking are closed for 2022
 
                     <li
                       className={`py-3.5
-								${text === "feature" ? "bg-slate-50" : ""
-                        } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
+								${
+                  text === "feature" ? "bg-slate-50" : ""
+                } cursor-pointer text-xl transition-all duration-200 px-8 ease-in uppercase  font-bold`}
                       onClick={() => handleClick("feature")}
                     >
                       Features
@@ -534,7 +573,6 @@ Note : Booking are closed for 2022
                       Specification
                       </li> */}
 
-
                     {/*  <li
                       className={`py-3.5
                  ${text === "additional" ? "bg-slate-50" : ""
@@ -545,9 +583,6 @@ Note : Booking are closed for 2022
                     </li>
 
                       */}
-
-
-
                   </ul>
                   <div className="p-6">
                     {text === "desc" && (
@@ -562,7 +597,6 @@ Note : Booking are closed for 2022
                         ))}
                       </div>
                     )}
-
 
                     {text === "feature" && (
                       <div className="grid grid-cols-2 md:grid-cols-3  rounded px-5 ">
@@ -586,52 +620,54 @@ Note : Booking are closed for 2022
                       </div>
                     )}
                   </div>
-
-
-
-
-
-
-
-
-
-
                 </div>
               </div>
-
-
 
               <div className="sm:block mt-14 hidden ">
                 <div className="max-w-6xl border border-slate-200 rounded bg-slate-50 mx-auto mt-5 w-full mb-10">
                   <div className=" p-10  ">
+                    <h2 className="font-semibold md:text-[27px] uppercase">
+                      {" "}
+                      Specification
+                    </h2>
 
-                    <h2 className="font-semibold md:text-[27px] uppercase"> Specification</h2>
-
-                    <h3 className="start py-1 mt-4 text-xl "> With Gogreen Ganesha </h3>
-                    <p className="start py-3 text-xl">Let us celebrate this year Ganesh Chaturthi in an eco-friendly way by welcoming your home a
-                      Murti of Go Green Ganesha. It is basically made up of Red Soil, Organic Fertilizers, Natural Colors and Seeds that will transform Ganesha Murti into a plant.
-                      Just by changing the material used to create the Murti, we managed to change the way people looked at immersions during the festival. To complete the immersion ritual with a Go Green Ganesha Murti,
-                      all we need is a sprinkle of water and the best part is, it can be done in one's own backyard instead of being carried to a waterbody.
-                      This exciting new format instantly touched a chord with people. It not only solves the water pollution issue but also creates a huge environmental impact for water bodies that get polluted every year.
+                    <h3 className="start py-1 mt-4 text-xl ">
+                      {" "}
+                      With Gogreen Ganesha{" "}
+                    </h3>
+                    <p className="start py-3 text-xl">
+                      Let us celebrate this year Ganesh Chaturthi in an
+                      eco-friendly way by welcoming your home a Murti of Go
+                      Green Ganesha. It is basically made up of Red Soil,
+                      Organic Fertilizers, Natural Colors and Seeds that will
+                      transform Ganesha Murti into a plant. Just by changing the
+                      material used to create the Murti, we managed to change
+                      the way people looked at immersions during the festival.
+                      To complete the immersion ritual with a Go Green Ganesha
+                      Murti, all we need is a sprinkle of water and the best
+                      part is, it can be done in one's own backyard instead of
+                      being carried to a waterbody. This exciting new format
+                      instantly touched a chord with people. It not only solves
+                      the water pollution issue but also creates a huge
+                      environmental impact for water bodies that get polluted
+                      every year.
                     </p>
 
-                    <p className="start py-3 text-xl " >So, Book your Go Green Ganesha now and contribute a bit to Nature! "</p>
-
+                    <p className="start py-3 text-xl ">
+                      So, Book your Go Green Ganesha now and contribute a bit to
+                      Nature! "
+                    </p>
                   </div>
                 </div>
-
               </div>
-
-
-
 
               <ClayRandom name="plant-ganesha" url={product?.url} />
             </div>
           </BaseSection>
         </>
-        :
+      ) : (
         <Loader2 />
-      }
+      )}
     </>
   );
 }

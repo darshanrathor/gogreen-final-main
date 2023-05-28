@@ -30,6 +30,7 @@ export function Product(props) {
       )}
       <div className="flex px-4 py-4 flex-col gap-2 w-full group">
         <Link
+          legacyBehavior
           href={{
             pathname: `/${props.category}/product`,
             query: { q: props.url },

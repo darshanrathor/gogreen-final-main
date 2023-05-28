@@ -83,7 +83,7 @@ export default function Navbar() {
                 />
               </svg>
             </button>
-            <Link href="/">
+            <Link legacyBehavior href="/">
               <a className="w-[130px]">
                 <Image
                   priority={true}
@@ -129,17 +129,17 @@ export default function Navbar() {
                 </div>
               ) : (
                 <>
-                  {/* <Link href="/login">
+                  <Link legacyBehavior href="/login">
                     <a className="text-white hover:text-zinc-300 md:text-lg">
                       Login
                     </a>
                   </Link>
                   /
-                  <Link href="/signup">
+                  <Link legacyBehavior href="/signup">
                     <a className="text-white hover:text-zinc-300 md:text-lg">
                       Signup
                     </a>
-                  </Link> */}
+                  </Link>
                 </>
               )}
             </div>
@@ -192,7 +192,7 @@ export default function Navbar() {
 
 const Navlink = ({ text, link }) => {
   return (
-    <Link href={link}>
+    <Link legacyBehavior href={link}>
       <a className="capitalize hover:text-zinc-300   py-2.5 text-white font-semibold md:text-xl duration-100 ease-in">
         {text}
       </a>

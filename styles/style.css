@@ -146,3 +146,7 @@ select{
     .horizontal-timeline .items .items-list {
     padding-top: 15px;
     }
+
+        .carousel .thumbs-wrapper{
+          margin: 20px 0 20px !important;
+        }

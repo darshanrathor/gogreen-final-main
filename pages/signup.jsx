@@ -80,7 +80,9 @@ export default function Signup() {
           className="bg-white rounded shadow-xl max-w-lg p-6 sm:p-10 w-full flex flex-col gap-6"
         >
           <div>
-            <h2 className="mb-2 text-4xl text-zinc-700 font-bold text-[#184029]">Signup</h2>
+            <h2 className="mb-2 text-4xl text-zinc-700 font-bold text-[#184029]">
+              Signup
+            </h2>
           </div>
           <div className="flex flex-col gap-5">
             <div className="flex  flex-col gap-2">
@@ -225,16 +227,14 @@ l6 -41 -213 0 -213 0 6 42 c7 55 52 116 107 146 61 32 159 29 214 -8z"
               Sign Up
             </button>
           </div>
-
         </form>
         <p className="text-zinc-800 text-lg">
           Already have an account ?{" "}
-          <Link href="/login">
+          <Link legacyBehavior href="/login">
             <a className="font-semibold text-blue-600 hover:text-rose-500">
               Log in
             </a>
           </Link>
-
         </p>
       </div>
     </>
