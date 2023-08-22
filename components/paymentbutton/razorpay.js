@@ -3,7 +3,6 @@ import { supabase } from "../supabase/supabase";
 import { initializeRazorpay } from "../utils/razorpay";
 
 async function displayRazorpay(email, name, mobilenumber, amount1, item) {
-
   if (email === null) {
     setlogin(true);
   } else {
@@ -58,7 +57,6 @@ async function displayRazorpay(email, name, mobilenumber, amount1, item) {
           //   arr.push(item);
           //   }
 
-
           //   const msg = `<p>
           //   Dear Admin,
           //   </p>
@@ -69,7 +67,6 @@ async function displayRazorpay(email, name, mobilenumber, amount1, item) {
           //   <p>
           //   Regards, Gogreenganesha.
           //   </p>`;
-
 
           //   var templateParams = {
           //     to_name: name,
@@ -102,21 +99,14 @@ async function displayRazorpay(email, name, mobilenumber, amount1, item) {
 }
 
 const updatePaymentSuccess = async (order_id, email) => {
-  const { data, error } = await supabase.from("orderHistory")
+  const { data, error } = await supabase
+    .from("orderHistory")
     .update({
       paymentstatus: true,
-      order_id: order_id
+      order_id: order_id,
     })
     .match({ email: email });
   window.location.href = "/order-thank-you";
-}
-
-
-
-
+};
 
 export default displayRazorpay;
-
-
-
-

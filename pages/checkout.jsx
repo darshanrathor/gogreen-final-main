@@ -420,7 +420,11 @@ export default function Checkout(props) {
                     </div>
                     {error && <ErrorButton text={error} />}
 
-                    <button
+                    <div className="bg-green-200 px-10 py-3 md:text-lg text-center  rounded-md">
+                      2023 Bookings Closed
+                    </div>
+
+                    {/* <button
                       onClick={submitingform}
                       disabled={loader2}
                       className={`${
@@ -428,7 +432,7 @@ export default function Checkout(props) {
                       } text-[18px] mt-[-20px] bg-[#184029] text-white font-bold  ml-auto max-w-[250px] hover:bg-green-800 py-4 px-5 rounded`}
                     >
                       {loader2 ? <Loader3 /> : "Continue shopping"}
-                    </button>
+                    </button> */}
 
                     {/* <div>
                       <h3 className="bg-green-300 text-xl py-3 center px-3 text-center">
