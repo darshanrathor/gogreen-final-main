@@ -420,7 +420,7 @@ export default function Checkout(props) {
                     </div>
                     {error && <ErrorButton text={error} />}
 
-                    <div className="bg-green-200 px-10 py-3 md:text-lg text-center  rounded-md">
+                    <div className="bg-red-500 px-10 py-3 md:text-lg text-center text-white rounded-md">
                       2023 Bookings Closed
                     </div>
 
